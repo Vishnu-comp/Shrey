@@ -1,0 +1,36 @@
+{
+  "change_id": "music-expiry-01",
+  "change": {
+    "change_id": "music-expiry-01",
+    "type": "contract_expired",
+    "ref": "music-02",
+    "payload": {},
+    "description": "Music rights for 'Distant Drums' (contract music-02) expire after the first trailer plan is created"
+  },
+  "model_review": {
+    "change_type": "contract_expired",
+    "ref": "music-02",
+    "touches": [
+      "contract:music-02"
+    ],
+    "note": "hypothesis only \u2014 exact impact computed from evidence graph"
+  },
+  "affected": [
+    {
+      "trailer_id": "young_adult_v2",
+      "segments": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    }
+  ],
+  "revisions": [
+    "young_adult_v2: music music_02 -> music_01 (contract music-02 lapsed); timecodes unchanged; validation now PASS"
+  ],
+  "rejected": []
+}

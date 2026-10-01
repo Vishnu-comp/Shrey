@@ -1,0 +1,40 @@
+{
+  "change_id": "lakshmi-no-use-01",
+  "change": {
+    "change_id": "lakshmi-no-use-01",
+    "type": "actor_terms_changed",
+    "ref": "c3",
+    "payload": {
+      "terms": {
+        "promotional_use": "none"
+      }
+    },
+    "description": "Lakshmi's estate tightens appearance rights: no promotional use of any kind"
+  },
+  "model_review": {
+    "change_type": "actor_terms_changed",
+    "ref": "c3",
+    "touches": [],
+    "note": "hypothesis only \u2014 exact impact computed from evidence graph"
+  },
+  "affected": [
+    {
+      "trailer_id": "family_v2",
+      "segments": [
+        2,
+        6
+      ]
+    },
+    {
+      "trailer_id": "dialect_region_v2",
+      "segments": [
+        4
+      ]
+    }
+  ],
+  "revisions": [
+    "family_v2: segments [2, 6] revised after c3 terms change stills_only -> none; other segments untouched; validation now PASS",
+    "dialect_region_v2: segments [4] revised after c3 terms change stills_only -> none; other segments untouched; validation now PASS_WITH_WARNINGS"
+  ],
+  "rejected": []
+}

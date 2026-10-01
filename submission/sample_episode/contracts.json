@@ -1,0 +1,31 @@
+[
+  {"id": "music-01", "kind": "music", "ref": "music_01",
+   "terms": {"license": "full_promotional", "territories": ["IN"], "audiences": ["*"]},
+   "note": "composer-owned; cleared for all trailers"},
+
+  {"id": "music-02", "kind": "music", "ref": "music_02",
+   "terms": {"license": "streaming_trailer", "territories": ["IN"], "audiences": ["*"]},
+   "valid_until": "2026-10-15",
+   "note": "expires 2026-10-15 — after launch week; confirm ship date before use"},
+
+  {"id": "music-03", "kind": "music", "ref": "music_03",
+   "terms": {"license": "regional_promotional", "territories": ["IN"], "audiences": ["family", "dialect"]},
+   "note": "folk track; restricted to family and dialect campaigns"},
+
+  {"id": "actor-c1", "kind": "actor", "ref": "c1", "terms": {"promotional_use": "full"}, "note": ""},
+  {"id": "actor-c2", "kind": "actor", "ref": "c2", "terms": {"promotional_use": "full"}, "note": ""},
+
+  {"id": "actor-c3", "kind": "actor", "ref": "c3",
+   "terms": {"promotional_use": "stills_only"},
+   "note": "Lakshmi's appearance rights: still frames only — no moving footage, no voice"},
+
+  {"id": "actor-c4", "kind": "actor", "ref": "c4",
+   "terms": {"promotional_use": "dialogue_and_video"}, "note": ""},
+
+  {"id": "actor-c5", "kind": "actor", "ref": "c5",
+   "terms": {"promotional_use": "background_only"},
+   "note": "Suresh may appear only where he is a background (secondary) character"},
+
+  {"id": "terr-01", "kind": "territory", "ref": "IN",
+   "terms": {"markets": ["IN"]}, "note": "India-only promotional rights"}
+]

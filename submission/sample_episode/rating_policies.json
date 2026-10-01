@@ -1,0 +1,30 @@
+{
+  "family": [
+    {"rule_id": "family-01", "field": "frightening", "op": ">=", "value": 2, "action": "block",
+     "description": "No frightening sequences for family audiences"},
+    {"rule_id": "family-02", "field": "strong_language", "op": ">=", "value": 1, "action": "block",
+     "description": "No strong language for family audiences"},
+    {"rule_id": "family-03", "field": "twist", "op": ">=", "value": 1, "action": "block",
+     "description": "No twist or revelation scenes for family audiences"},
+    {"rule_id": "family-04", "field": "grief", "op": ">=", "value": 2, "action": "block",
+     "description": "No sustained grief/death content for family audiences"},
+    {"rule_id": "family-05", "field": "death_reference", "op": ">=", "value": 2, "action": "block",
+     "description": "No sustained death content for family audiences"}
+  ],
+  "ya": [
+    {"rule_id": "ya-01", "field": "frightening", "op": ">=", "value": 3, "action": "block",
+     "description": "No graphic fear for young adult audiences"},
+    {"rule_id": "ya-02", "field": "strong_language", "op": ">=", "value": 2, "action": "block",
+     "description": "No severe strong language for young adult audiences"},
+    {"rule_id": "ya-03", "field": "twist", "op": ">=", "value": 1, "action": "block",
+     "description": "Never reveal the central twist to young adult audiences"}
+  ],
+  "dialect": [
+    {"rule_id": "dialect-01", "field": "stereotype_framing", "op": "==", "value": true, "action": "block",
+     "description": "Dialect must not be framed as comic or exotic"}
+  ],
+  "all": [
+    {"rule_id": "all-01", "field": "subtitle_missing", "op": "==", "value": true, "action": "flag",
+     "description": "Dialogue segments require subtitles (accessibility)"}
+  ]
+}

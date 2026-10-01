@@ -1,0 +1,11 @@
+{
+  "change_id": "lakshmi-no-use-01",
+  "type": "actor_terms_changed",
+  "ref": "c3",
+  "payload": {
+    "terms": {
+      "promotional_use": "none"
+    }
+  },
+  "description": "Lakshmi's estate tightens appearance rights: no promotional use of any kind"
+}

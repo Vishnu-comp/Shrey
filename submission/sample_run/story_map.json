@@ -1,0 +1,411 @@
+{
+  "_provenance": {
+    "generated_by": "mock-director-v1",
+    "run_id": "sample-run-2026-10-01",
+    "ts": "2026-10-01T09:00:00+05:30",
+    "method": "structured package metadata (mock) / LLM summarization (live); protected facts from the platform's own spoiler list"
+  },
+  "characters": [
+    {
+      "id": "c1",
+      "name": "Anand Iyer",
+      "age": 34,
+      "role": "eldest son, architect (Bengaluru)",
+      "notes": "under financial pressure from his firm's dues"
+    },
+    {
+      "id": "c2",
+      "name": "Meera Iyer",
+      "age": 27,
+      "role": "younger daughter, schoolteacher",
+      "notes": "keeper of the family stories"
+    },
+    {
+      "id": "c3",
+      "name": "Lakshmi",
+      "age": 61,
+      "role": "maternal aunt; has run the house for 30 years",
+      "notes": ""
+    },
+    {
+      "id": "c4",
+      "name": "Ravi",
+      "age": 30,
+      "role": "Anand's childhood friend",
+      "notes": "left ten years ago; returns unannounced"
+    },
+    {
+      "id": "c5",
+      "name": "Suresh",
+      "age": 58,
+      "role": "neighbor, runs the general store",
+      "notes": "assumed by the family to be the house's enemy"
+    },
+    {
+      "id": "c6",
+      "name": "Shobha",
+      "age": 55,
+      "role": "neighbor; runs the village feast committee",
+      "notes": ""
+    },
+    {
+      "id": "c7",
+      "name": "Rukmini Iyer (deceased)",
+      "age": 58,
+      "role": "the mother",
+      "notes": "appears in letters and flashbacks"
+    }
+  ],
+  "relationships": [
+    {
+      "a": "c1",
+      "b": "c2",
+      "relation": "siblings in conflict over the house"
+    },
+    {
+      "a": "c1",
+      "b": "c4",
+      "relation": "childhood friends, estranged for ten years"
+    },
+    {
+      "a": "c2",
+      "b": "c5",
+      "relation": "disputing the boundary line"
+    },
+    {
+      "a": "c3",
+      "b": "c1",
+      "relation": "aunt who raised them"
+    },
+    {
+      "a": "c1",
+      "b": "c7",
+      "relation": "mother and son"
+    },
+    {
+      "a": "c2",
+      "b": "c7",
+      "relation": "mother and daughter"
+    }
+  ],
+  "events": [
+    {
+      "scene_id": "scene_06",
+      "tc": "02:19.000",
+      "title": "Lakshmi's Arrival",
+      "summary": "Lakshmi arrives with the evening meal; old habits, old tension.",
+      "weight": 0.5
+    },
+    {
+      "scene_id": "scene_08",
+      "tc": "03:20.000",
+      "title": "Power Cut",
+      "summary": "Power cut; the old house creaks; Meera is frightened.",
+      "weight": 0.5
+    },
+    {
+      "scene_id": "scene_02",
+      "tc": "00:24.000",
+      "title": "Car Banter",
+      "summary": "Car ride; siblings banter over the sale.",
+      "weight": 0.55
+    },
+    {
+      "scene_id": "scene_04",
+      "tc": "01:18.000",
+      "title": "The Dusty Hall",
+      "summary": "The dusty ancestral hall, old photographs on the wall.",
+      "weight": 0.55
+    },
+    {
+      "scene_id": "scene_01",
+      "tc": "00:00.000",
+      "title": "The Monsoon House",
+      "summary": "Rain on the tiled roof of the Iyer ancestral home; the courtyard breathes. No dialogue.",
+      "weight": 0.6
+    },
+    {
+      "scene_id": "scene_03",
+      "tc": "00:52.000",
+      "title": "Welcome at the Gate",
+      "summary": "The siblings arrive; Suresh greets them at his shop.",
+      "weight": 0.6
+    },
+    {
+      "scene_id": "scene_12",
+      "tc": "05:28.000",
+      "title": "Veranda Talk",
+      "summary": "Meera and Ravi talk on the veranda; he speaks in Kannada.",
+      "weight": 0.6
+    },
+    {
+      "scene_id": "scene_14",
+      "tc": "06:32.000",
+      "title": "To Open or Not",
+      "summary": "The siblings decide whether to open the granary.",
+      "weight": 0.6
+    },
+    {
+      "scene_id": "scene_07",
+      "tc": "02:48.000",
+      "title": "Dinner Table",
+      "summary": "Dinner; Lakshmi's cooking; old habits survive.",
+      "weight": 0.7
+    },
+    {
+      "scene_id": "scene_10",
+      "tc": "04:22.000",
+      "title": "The Shop Confrontation",
+      "summary": "Meera confronts Suresh at his shop; he flares.",
+      "weight": 0.7
+    },
+    {
+      "scene_id": "scene_11",
+      "tc": "04:55.000",
+      "title": "Ravi Returns",
+      "summary": "Ravi appears at the gate after ten years.",
+      "weight": 0.7
+    },
+    {
+      "scene_id": "scene_18",
+      "tc": "08:42.000",
+      "title": "Ravi's Warning",
+      "summary": "Ravi tells Anand he knows something; Anand pushes back.",
+      "weight": 0.7
+    },
+    {
+      "scene_id": "scene_09",
+      "tc": "03:50.000",
+      "title": "The Hidden Ledger",
+      "summary": "A second back to the cupboard; a ledger from 1998.",
+      "weight": 0.75
+    },
+    {
+      "scene_id": "scene_15",
+      "tc": "07:05.000",
+      "title": "Village Feast",
+      "summary": "The village feast; half the town shows up.",
+      "weight": 0.75
+    },
+    {
+      "scene_id": "scene_17",
+      "tc": "08:10.000",
+      "title": "The Old Letters",
+      "summary": "Anand reads the mother's old letters.",
+      "weight": 0.75
+    },
+    {
+      "scene_id": "scene_05",
+      "tc": "01:47.000",
+      "title": "The Argument",
+      "summary": "Siblings argue at the table over selling the house.",
+      "weight": 0.8
+    },
+    {
+      "scene_id": "scene_13",
+      "tc": "06:00.000",
+      "title": "The Locked Room",
+      "summary": "The sealed granary room, a new lock.",
+      "weight": 0.8
+    },
+    {
+      "scene_id": "scene_20",
+      "tc": "10:00.000",
+      "title": "Meera's Anger",
+      "summary": "Meera's anger at her mother, after the letter.",
+      "weight": 0.8
+    },
+    {
+      "scene_id": "scene_24",
+      "tc": "12:15.000",
+      "title": "The Gathering",
+      "summary": "Neighbors and family gather to help.",
+      "weight": 0.8
+    },
+    {
+      "scene_id": "scene_25",
+      "tc": "12:50.000",
+      "title": "Dawn After Rain",
+      "summary": "Dawn after rain over the house. No dialogue in frame; a closing voice-over.",
+      "weight": 0.8
+    },
+    {
+      "scene_id": "scene_16",
+      "tc": "07:37.000",
+      "title": "Mother's Kitchen",
+      "summary": "Meera alone in her mother's kitchen.",
+      "weight": 0.85
+    },
+    {
+      "scene_id": "scene_21",
+      "tc": "10:32.000",
+      "title": "The Key Line",
+      "summary": "Close-up of the letter's key line; the date on the deed.",
+      "weight": 0.9
+    },
+    {
+      "scene_id": "scene_22",
+      "tc": "11:05.000",
+      "title": "Suresh's Truth",
+      "summary": "Suresh reveals the original deed; he was mother's ally.",
+      "weight": 0.9
+    },
+    {
+      "scene_id": "scene_23",
+      "tc": "11:40.000",
+      "title": "The Decision",
+      "summary": "The siblings decide to keep the house.",
+      "weight": 0.9
+    },
+    {
+      "scene_id": "scene_19",
+      "tc": "09:15.000",
+      "title": "The Letter",
+      "summary": "The mother's letter is read aloud; the land was signed away.",
+      "weight": 1.0
+    }
+  ],
+  "emotional_turns": [
+    {
+      "scene_id": "scene_05",
+      "tc": "01:47.000",
+      "title": "The Argument"
+    },
+    {
+      "scene_id": "scene_11",
+      "tc": "04:55.000",
+      "title": "Ravi Returns"
+    },
+    {
+      "scene_id": "scene_16",
+      "tc": "07:37.000",
+      "title": "Mother's Kitchen"
+    },
+    {
+      "scene_id": "scene_19",
+      "tc": "09:15.000",
+      "title": "The Letter"
+    },
+    {
+      "scene_id": "scene_22",
+      "tc": "11:05.000",
+      "title": "Suresh's Truth"
+    },
+    {
+      "scene_id": "scene_23",
+      "tc": "11:40.000",
+      "title": "The Decision"
+    }
+  ],
+  "protected_facts": [
+    {
+      "fact_id": "P1",
+      "text": "Mother sold the land years ago to shield the family from debt; the house was never legally theirs.",
+      "reveal_scene": "scene_19",
+      "reveal_tc": "09:38.000",
+      "teaser": {
+        "family": 0,
+        "ya": 1,
+        "dialect": 1
+      },
+      "keywords": [
+        "signed away the land",
+        "never legally ours",
+        "sold the land",
+        "deed was signed"
+      ]
+    },
+    {
+      "fact_id": "P2",
+      "text": "Suresh was mother's ally; he has been guarding the deed all along.",
+      "reveal_scene": "scene_22",
+      "reveal_tc": "11:20.000",
+      "teaser": {
+        "family": 0,
+        "ya": 0,
+        "dialect": 0
+      },
+      "keywords": [
+        "kept the original deed",
+        "never your enemy",
+        "guarding the deed"
+      ]
+    }
+  ],
+  "sensitive_content": [
+    {
+      "scene_id": "scene_08",
+      "tags": [
+        "frightening"
+      ],
+      "flags": {
+        "frightening": 2
+      }
+    },
+    {
+      "scene_id": "scene_10",
+      "tags": [
+        "strong_language"
+      ],
+      "flags": {
+        "strong_language": 1
+      }
+    },
+    {
+      "scene_id": "scene_16",
+      "tags": [
+        "death_reference",
+        "grief"
+      ],
+      "flags": {
+        "grief": 1,
+        "death_reference": 1
+      }
+    },
+    {
+      "scene_id": "scene_19",
+      "tags": [
+        "grief",
+        "twist"
+      ],
+      "flags": {
+        "grief": 2,
+        "twist": 2
+      }
+    },
+    {
+      "scene_id": "scene_20",
+      "tags": [
+        "grief",
+        "post_reveal"
+      ],
+      "flags": {
+        "grief": 2,
+        "post_reveal": 1
+      }
+    },
+    {
+      "scene_id": "scene_21",
+      "tags": [
+        "post_reveal",
+        "twist"
+      ],
+      "flags": {
+        "twist": 2,
+        "post_reveal": 1
+      }
+    },
+    {
+      "scene_id": "scene_22",
+      "tags": [
+        "post_reveal",
+        "twist"
+      ],
+      "flags": {
+        "twist": 1,
+        "post_reveal": 1
+      }
+    }
+  ],
+  "central_twist": "P1"
+}

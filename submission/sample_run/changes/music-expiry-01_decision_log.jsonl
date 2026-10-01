@@ -1,0 +1,5 @@
+{"ts":"2026-10-01T09:00:00+05:30","run_id":"change-music-expiry-01","phase":"change","action":"session_restored","refs":[],"cost_usd":0.0,"note":"run-dir=sample_run"}
+{"ts":"2026-10-01T09:00:00+05:30","run_id":"change-music-expiry-01","phase":"model","action":"call:story_map","task":"story_map","model":"mock-director-v1","refs":[],"cost_usd":0.02,"note":"rebuild for change review"}
+{"ts":"2026-10-01T09:00:00+05:30","run_id":"change-music-expiry-01","phase":"model","action":"call:change_review","task":"change_review","model":"mock-director-v1","refs":["music-expiry-01"],"cost_usd":0.01,"note":"Music rights for 'Distant Drums' (contract music-02) expire after the first trailer plan is created"}
+{"ts":"2026-10-01T09:00:00+05:30","run_id":"change-music-expiry-01","phase":"change","action":"state_mutated","refs":[],"cost_usd":0.0,"note":"contract:music-02 (music_02) lapsed 2026-09-30"}
+{"ts":"2026-10-01T09:00:00+05:30","run_id":"change-music-expiry-01","trailer_id":"young_adult_v2","phase":"change","action":"revision","refs":[],"cost_usd":0.0,"note":"music music_02 -> music_01 — contract music-02 lapsed"}

@@ -1,0 +1,14 @@
+{
+  "task_costs_usd": {
+    "story_map": 0.02,
+    "promise": 0.01,
+    "rank": 0.002,
+    "select": 0.002,
+    "spoiler_review": 0.005,
+    "change_review": 0.01,
+    "validate": 0.003
+  },
+  "media_processing_flat_usd": 0.05,
+  "max_model_calls": 150,
+  "max_total_usd": 5.0
+}

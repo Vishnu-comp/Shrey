@@ -1,0 +1,399 @@
+{
+  "_provenance": {
+    "generated_by": "constraint-compiler",
+    "run_id": "sample-run-2026-10-01",
+    "note": "policies and contracts compiled to executable rules; change handler replaces rule objects on revision"
+  },
+  "rules": [
+    {
+      "rule_id": "family-01",
+      "kind": "rating",
+      "audience": "family",
+      "spec": {
+        "field": "frightening",
+        "op": ">=",
+        "value": 2
+      },
+      "action": "block",
+      "description": "No frightening sequences for family audiences",
+      "source": "policy:family-01",
+      "active": true
+    },
+    {
+      "rule_id": "family-02",
+      "kind": "rating",
+      "audience": "family",
+      "spec": {
+        "field": "strong_language",
+        "op": ">=",
+        "value": 1
+      },
+      "action": "block",
+      "description": "No strong language for family audiences",
+      "source": "policy:family-02",
+      "active": true
+    },
+    {
+      "rule_id": "family-03",
+      "kind": "rating",
+      "audience": "family",
+      "spec": {
+        "field": "twist",
+        "op": ">=",
+        "value": 1
+      },
+      "action": "block",
+      "description": "No twist or revelation scenes for family audiences",
+      "source": "policy:family-03",
+      "active": true
+    },
+    {
+      "rule_id": "family-04",
+      "kind": "rating",
+      "audience": "family",
+      "spec": {
+        "field": "grief",
+        "op": ">=",
+        "value": 2
+      },
+      "action": "block",
+      "description": "No sustained grief/death content for family audiences",
+      "source": "policy:family-04",
+      "active": true
+    },
+    {
+      "rule_id": "family-05",
+      "kind": "rating",
+      "audience": "family",
+      "spec": {
+        "field": "death_reference",
+        "op": ">=",
+        "value": 2
+      },
+      "action": "block",
+      "description": "No sustained death content for family audiences",
+      "source": "policy:family-05",
+      "active": true
+    },
+    {
+      "rule_id": "ya-01",
+      "kind": "rating",
+      "audience": "ya",
+      "spec": {
+        "field": "frightening",
+        "op": ">=",
+        "value": 3
+      },
+      "action": "block",
+      "description": "No graphic fear for young adult audiences",
+      "source": "policy:ya-01",
+      "active": true
+    },
+    {
+      "rule_id": "ya-02",
+      "kind": "rating",
+      "audience": "ya",
+      "spec": {
+        "field": "strong_language",
+        "op": ">=",
+        "value": 2
+      },
+      "action": "block",
+      "description": "No severe strong language for young adult audiences",
+      "source": "policy:ya-02",
+      "active": true
+    },
+    {
+      "rule_id": "ya-03",
+      "kind": "rating",
+      "audience": "ya",
+      "spec": {
+        "field": "twist",
+        "op": ">=",
+        "value": 1
+      },
+      "action": "block",
+      "description": "Never reveal the central twist to young adult audiences",
+      "source": "policy:ya-03",
+      "active": true
+    },
+    {
+      "rule_id": "dialect-01",
+      "kind": "rating",
+      "audience": "dialect",
+      "spec": {
+        "field": "stereotype_framing",
+        "op": "==",
+        "value": true
+      },
+      "action": "block",
+      "description": "Dialect must not be framed as comic or exotic",
+      "source": "policy:dialect-01",
+      "active": true
+    },
+    {
+      "rule_id": "all-01",
+      "kind": "rating",
+      "audience": "*",
+      "spec": {
+        "field": "subtitle_missing",
+        "op": "==",
+        "value": true
+      },
+      "action": "flag",
+      "description": "Dialogue segments require subtitles (accessibility)",
+      "source": "policy:all-01",
+      "active": true
+    },
+    {
+      "rule_id": "rights:music:music_01",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "track": "music_01",
+        "audiences": [
+          "*"
+        ],
+        "territories": [
+          "IN"
+        ],
+        "valid_until": null
+      },
+      "action": "block",
+      "description": "Music 'music_01' may be used per contract music-01",
+      "source": "contract:music-01",
+      "active": true
+    },
+    {
+      "rule_id": "rights:music:music_02",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "track": "music_02",
+        "audiences": [
+          "*"
+        ],
+        "territories": [
+          "IN"
+        ],
+        "valid_until": "2026-10-15"
+      },
+      "action": "block",
+      "description": "Music 'music_02' may be used per contract music-02 until 2026-10-15",
+      "source": "contract:music-02",
+      "active": true
+    },
+    {
+      "rule_id": "rights:music:music_03",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "track": "music_03",
+        "audiences": [
+          "family",
+          "dialect"
+        ],
+        "territories": [
+          "IN"
+        ],
+        "valid_until": null
+      },
+      "action": "block",
+      "description": "Music 'music_03' may be used per contract music-03",
+      "source": "contract:music-03",
+      "active": true
+    },
+    {
+      "rule_id": "rights:actor:c1",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "actor": "c1",
+        "use": "full"
+      },
+      "action": "block",
+      "description": "Actor c1: promotional_use=full",
+      "source": "contract:actor-c1",
+      "active": true
+    },
+    {
+      "rule_id": "rights:actor:c2",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "actor": "c2",
+        "use": "full"
+      },
+      "action": "block",
+      "description": "Actor c2: promotional_use=full",
+      "source": "contract:actor-c2",
+      "active": true
+    },
+    {
+      "rule_id": "rights:actor:c3",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "actor": "c3",
+        "use": "stills_only"
+      },
+      "action": "block",
+      "description": "Actor c3: promotional_use=stills_only (Lakshmi's appearance rights: still frames only \u2014 no moving footage, no voice)",
+      "source": "contract:actor-c3",
+      "active": true
+    },
+    {
+      "rule_id": "rights:actor:c4",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "actor": "c4",
+        "use": "dialogue_and_video"
+      },
+      "action": "block",
+      "description": "Actor c4: promotional_use=dialogue_and_video",
+      "source": "contract:actor-c4",
+      "active": true
+    },
+    {
+      "rule_id": "rights:actor:c5",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "actor": "c5",
+        "use": "background_only"
+      },
+      "action": "block",
+      "description": "Actor c5: promotional_use=background_only (Suresh may appear only where he is a background (secondary) character)",
+      "source": "contract:actor-c5",
+      "active": true
+    },
+    {
+      "rule_id": "rights:territory:IN",
+      "kind": "rights",
+      "audience": "*",
+      "spec": {
+        "markets": [
+          "IN"
+        ]
+      },
+      "action": "block",
+      "description": "Territory restriction: ['IN']",
+      "source": "contract:terr-01",
+      "active": true
+    }
+  ],
+  "contracts": {
+    "music-01": {
+      "id": "music-01",
+      "kind": "music",
+      "ref": "music_01",
+      "terms": {
+        "license": "full_promotional",
+        "territories": [
+          "IN"
+        ],
+        "audiences": [
+          "*"
+        ]
+      },
+      "valid_until": null,
+      "note": "composer-owned; cleared for all trailers"
+    },
+    "music-02": {
+      "id": "music-02",
+      "kind": "music",
+      "ref": "music_02",
+      "terms": {
+        "license": "streaming_trailer",
+        "territories": [
+          "IN"
+        ],
+        "audiences": [
+          "*"
+        ]
+      },
+      "valid_until": "2026-10-15",
+      "note": "expires 2026-10-15 \u2014 after launch week; confirm ship date before use"
+    },
+    "music-03": {
+      "id": "music-03",
+      "kind": "music",
+      "ref": "music_03",
+      "terms": {
+        "license": "regional_promotional",
+        "territories": [
+          "IN"
+        ],
+        "audiences": [
+          "family",
+          "dialect"
+        ]
+      },
+      "valid_until": null,
+      "note": "folk track; restricted to family and dialect campaigns"
+    },
+    "actor-c1": {
+      "id": "actor-c1",
+      "kind": "actor",
+      "ref": "c1",
+      "terms": {
+        "promotional_use": "full"
+      },
+      "valid_until": null,
+      "note": ""
+    },
+    "actor-c2": {
+      "id": "actor-c2",
+      "kind": "actor",
+      "ref": "c2",
+      "terms": {
+        "promotional_use": "full"
+      },
+      "valid_until": null,
+      "note": ""
+    },
+    "actor-c3": {
+      "id": "actor-c3",
+      "kind": "actor",
+      "ref": "c3",
+      "terms": {
+        "promotional_use": "stills_only"
+      },
+      "valid_until": null,
+      "note": "Lakshmi's appearance rights: still frames only \u2014 no moving footage, no voice"
+    },
+    "actor-c4": {
+      "id": "actor-c4",
+      "kind": "actor",
+      "ref": "c4",
+      "terms": {
+        "promotional_use": "dialogue_and_video"
+      },
+      "valid_until": null,
+      "note": ""
+    },
+    "actor-c5": {
+      "id": "actor-c5",
+      "kind": "actor",
+      "ref": "c5",
+      "terms": {
+        "promotional_use": "background_only"
+      },
+      "valid_until": null,
+      "note": "Suresh may appear only where he is a background (secondary) character"
+    },
+    "terr-01": {
+      "id": "terr-01",
+      "kind": "territory",
+      "ref": "IN",
+      "terms": {
+        "markets": [
+          "IN"
+        ]
+      },
+      "valid_until": null,
+      "note": "India-only promotional rights"
+    }
+  }
+}

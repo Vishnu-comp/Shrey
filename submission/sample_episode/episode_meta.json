@@ -1,0 +1,49 @@
+{
+  "episode_id": "monsoon-house-s01e01",
+  "title": "Monsoon House",
+  "season": 1,
+  "episode": 1,
+  "duration_tc": "14:00.000",
+  "languages": {
+    "source": "en",
+    "subtitle_tracks": ["hi", "kn"],
+    "notes": "source dialogue is English; two dialect subtitle tracks (Hindi, Kannada) are supplied for regional campaigns"
+  },
+  "setting": "A small coastal-plain town in Karnataka, monsoon season",
+  "characters": [
+    {"id": "c1", "name": "Anand Iyer", "age": 34, "role": "eldest son, architect (Bengaluru)", "notes": "under financial pressure from his firm's dues"},
+    {"id": "c2", "name": "Meera Iyer", "age": 27, "role": "younger daughter, schoolteacher", "notes": "keeper of the family stories"},
+    {"id": "c3", "name": "Lakshmi", "age": 61, "role": "maternal aunt; has run the house for 30 years", "notes": ""},
+    {"id": "c4", "name": "Ravi", "age": 30, "role": "Anand's childhood friend", "notes": "left ten years ago; returns unannounced"},
+    {"id": "c5", "name": "Suresh", "age": 58, "role": "neighbor, runs the general store", "notes": "assumed by the family to be the house's enemy"},
+    {"id": "c6", "name": "Shobha", "age": 55, "role": "neighbor; runs the village feast committee", "notes": ""},
+    {"id": "c7", "name": "Rukmini Iyer (deceased)", "age": 58, "role": "the mother", "notes": "appears in letters and flashbacks"}
+  ],
+  "relationships": [
+    {"a": "c1", "b": "c2", "relation": "siblings in conflict over the house"},
+    {"a": "c1", "b": "c4", "relation": "childhood friends, estranged for ten years"},
+    {"a": "c2", "b": "c5", "relation": "disputing the boundary line"},
+    {"a": "c3", "b": "c1", "relation": "aunt who raised them"},
+    {"a": "c1", "b": "c7", "relation": "mother and son"},
+    {"a": "c2", "b": "c7", "relation": "mother and daughter"}
+  ],
+  "protected_facts": [
+    {
+      "fact_id": "P1",
+      "text": "Mother sold the land years ago to shield the family from debt; the house was never legally theirs.",
+      "reveal_scene": "scene_19",
+      "reveal_tc": "09:38.000",
+      "teaser": {"family": 0, "ya": 1, "dialect": 1},
+      "keywords": ["signed away the land", "never legally ours", "sold the land", "deed was signed"]
+    },
+    {
+      "fact_id": "P2",
+      "text": "Suresh was mother's ally; he has been guarding the deed all along.",
+      "reveal_scene": "scene_22",
+      "reveal_tc": "11:20.000",
+      "teaser": {"family": 0, "ya": 0, "dialect": 0},
+      "keywords": ["kept the original deed", "never your enemy", "guarding the deed"]
+    }
+  ],
+  "central_twist_fact": "P1"
+}

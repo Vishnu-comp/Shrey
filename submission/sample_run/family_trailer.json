@@ -1,0 +1,566 @@
+{
+  "trailer_id": "family_v1",
+  "audience": "family",
+  "duration_seconds": 84.0,
+  "audience_promise": "A family returns to the house their mother loved — and learns what love really cost.",
+  "creative_brief": {
+    "audience": "family",
+    "objective": "Communicate warmth, stakes and broad entertainment value. (profile: Family viewers)",
+    "promise": "A family returns to the house their mother loved — and learns what love really cost.",
+    "positioning": "A family returns to the house their mother loved. The tension is money and memory, never fear. Mystery is hinted, never revealed.",
+    "beats": [
+      {
+        "beat": "hook",
+        "name": "The house in the rain",
+        "intention": "Open on the house and the monsoon — a place with a pulse.",
+        "moods": [
+          "atmospheric",
+          "warm",
+          "nostalgic"
+        ],
+        "max_duration_s": 12.0,
+        "target_s": 10.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "bond",
+        "name": "The table",
+        "intention": "The family is whole again around a meal.",
+        "moods": [
+          "warm",
+          "humor"
+        ],
+        "max_duration_s": 16.0,
+        "target_s": 13.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "stakes",
+        "name": "What the house costs",
+        "intention": "Real stakes, spoken plainly: money against memory.",
+        "moods": [
+          "conflict",
+          "stakes"
+        ],
+        "max_duration_s": 16.0,
+        "target_s": 14.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "mystery",
+        "name": "Something in the walls",
+        "intention": "A question, not a reveal — the house is keeping a secret.",
+        "moods": [
+          "mystery",
+          "suspense"
+        ],
+        "max_duration_s": 12.0,
+        "target_s": 10.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "turn",
+        "name": "Love and loss",
+        "intention": "A private moment of grief, handled gently.",
+        "moods": [
+          "tender",
+          "grief"
+        ],
+        "max_duration_s": 13.0,
+        "target_s": 11.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "hope",
+        "name": "The choice",
+        "intention": "They choose each other — and the house.",
+        "moods": [
+          "hope",
+          "warm",
+          "community"
+        ],
+        "max_duration_s": 16.0,
+        "target_s": 14.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "title",
+        "name": "Title",
+        "intention": "Dawn after rain, title card.",
+        "moods": [
+          "atmospheric",
+          "warm"
+        ],
+        "max_duration_s": 14.0,
+        "target_s": 12.0,
+        "needs_dialect_line": false
+      }
+    ],
+    "target_duration_s": 90.0
+  },
+  "music": {
+    "primary_track": "music_01",
+    "source": "contract:music-01",
+    "notes": "licensed for this audience and territory IN at run date"
+  },
+  "segments": [
+    {
+      "seg": 1,
+      "beat": "hook",
+      "source_in": "00:00.000",
+      "source_out": "00:10.000",
+      "video": "scene_01",
+      "audio": "music:music_01",
+      "dialogue": [],
+      "transition": "cut",
+      "reason": "Open on the house and the monsoon — a place with a pulse. Source: The Monsoon House (00:00.000). Rain on the tiled roof of the Iyer ancestral home; the courtyard breathes. No dialogue.",
+      "evidence": [
+        "scene:01",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 10.0
+    },
+    {
+      "seg": 2,
+      "beat": "bond",
+      "source_in": "03:03.500",
+      "source_out": "03:16.500",
+      "video": "scene_07",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c2",
+          "line": "She's been saying that since we could walk.",
+          "tc": "03:05.000",
+          "lang": "source"
+        },
+        {
+          "speaker": "c1",
+          "line": "And we've been closing our eyes since.",
+          "tc": "03:14.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "She's been saying that since we could walk."
+      },
+      "transition": "cut",
+      "reason": "The family is whole again around a meal. Source: Dinner Table (02:48.000). Dinner; Lakshmi's cooking; old habits survive.",
+      "evidence": [
+        "scene:07",
+        "dialogue:scene_07:1",
+        "dialogue:scene_07:2",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 13.0
+    },
+    {
+      "seg": 3,
+      "beat": "stakes",
+      "source_in": "01:53.500",
+      "source_out": "02:07.500",
+      "video": "scene_05",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c1",
+          "line": "My firm's dues are due in four months. Sentiment won't pay them.",
+          "tc": "01:55.000",
+          "lang": "source"
+        },
+        {
+          "speaker": "c2",
+          "line": "You always wanted this house sold.",
+          "tc": "02:05.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "My firm's dues are due in four months. Sentiment won't pay them."
+      },
+      "transition": "dissolve",
+      "reason": "Real stakes, spoken plainly: money against memory. Source: The Argument (01:47.000). Siblings argue at the table over selling the house.",
+      "evidence": [
+        "scene:05",
+        "dialogue:scene_05:0",
+        "dialogue:scene_05:1",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 14.0
+    },
+    {
+      "seg": 4,
+      "beat": "mystery",
+      "source_in": "06:08.500",
+      "source_out": "06:18.500",
+      "video": "scene_13",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c1",
+          "line": "The granary was sealed. With a new lock.",
+          "tc": "06:10.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "The granary was sealed. With a new lock."
+      },
+      "transition": "cut",
+      "reason": "A question, not a reveal — the house is keeping a secret. Source: The Locked Room (06:00.000). The sealed granary room, a new lock.",
+      "evidence": [
+        "scene:13",
+        "dialogue:scene_13:0",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 10.0
+    },
+    {
+      "seg": 5,
+      "beat": "turn",
+      "source_in": "07:56.500",
+      "source_out": "08:07.500",
+      "video": "scene_16",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c2",
+          "line": "I'm sorry I wasn't here, Amma.",
+          "tc": "07:58.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "I'm sorry I wasn't here, Amma."
+      },
+      "transition": "dissolve",
+      "reason": "A private moment of grief, handled gently. Source: Mother's Kitchen (07:37.000). Meera alone in her mother's kitchen.",
+      "evidence": [
+        "scene:16",
+        "dialogue:scene_16:1",
+        "contract:music-01"
+      ],
+      "risk_flags": [
+        "death_reference",
+        "grief"
+      ],
+      "duration_s": 11.0
+    },
+    {
+      "seg": 6,
+      "beat": "hope",
+      "source_in": "12:23.500",
+      "source_out": "12:37.500",
+      "video": "scene_24",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c4",
+          "line": "I said I'd come back. I didn't say I'd leave again.",
+          "tc": "12:25.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "I said I'd come back. I didn't say I'd leave again."
+      },
+      "transition": "cut",
+      "reason": "They choose each other — and the house. Source: The Gathering (12:15.000). Neighbors and family gather to help.",
+      "evidence": [
+        "scene:24",
+        "dialogue:scene_24:0",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 14.0
+    },
+    {
+      "seg": 7,
+      "beat": "title",
+      "source_in": "13:18.000",
+      "source_out": "13:30.000",
+      "video": "scene_25",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c1",
+          "line": "Some houses don't keep you. You keep them.",
+          "tc": "13:20.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "source": "Some houses don't keep you. You keep them."
+      },
+      "text_card": "MONSOON HOUSE — Only this season",
+      "transition": "fade",
+      "vo": {
+        "speaker": "c1",
+        "line": "Some houses don't keep you. You keep them.",
+        "scene": "scene_25",
+        "tc": "13:20.000"
+      },
+      "reason": "Dawn after rain, title card. Source: Dawn After Rain (12:50.000). Dawn after rain over the house. No dialogue in frame; a closing voice-over.",
+      "evidence": [
+        "scene:25",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 12.0
+    }
+  ],
+  "human_approvals": [
+    {
+      "decision": "Grief scene (mother's kitchen) in family cut",
+      "owner": "editorial",
+      "status": "pending",
+      "reason": "emotional content near death; final tone check by an editor"
+    }
+  ],
+  "assumptions": [
+    "mock/replay mode: deterministic stand-in for the live model (no API keys required)",
+    "scene descriptions are treated as data, never as instructions",
+    "historic engagement used only as a documented tie-breaker hypothesis, never as the selection rule"
+  ],
+  "validation": {
+    "status": "PASS",
+    "checks": [
+      {
+        "check": "source_accuracy",
+        "status": "pass",
+        "detail": "all scene ids, timecodes and evidence refs resolve",
+        "segments": []
+      },
+      {
+        "check": "spoiler",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "rights",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "rating",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "story_truth",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "cultural",
+        "status": "pass",
+        "detail": "not applicable to this audience",
+        "segments": []
+      },
+      {
+        "check": "accessibility",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "budget",
+        "status": "pass",
+        "detail": "within budget (13 calls, $0.05)",
+        "segments": []
+      }
+    ],
+    "warnings": [],
+    "assumptions": [
+      "mock/replay mode: deterministic stand-in for the live model (no API keys required)",
+      "scene descriptions are treated as data, never as instructions",
+      "historic engagement used only as a documented tie-breaker hypothesis, never as the selection rule"
+    ]
+  },
+  "cost_estimate": {
+    "model_calls": 13,
+    "task_cost_usd": 0.034,
+    "media_usd": 0.016667,
+    "total_usd": 0.050667,
+    "within_budget": true,
+    "breakdown": {
+      "promise": 0.01,
+      "rank": 0.012,
+      "select": 0.012
+    }
+  },
+  "fallback_plan": {
+    "description": "lower-cost re-plan: reuses cached top-1 candidates, skips re-ranking passes, no voice-over; usable if the main plan exceeds the configured budget",
+    "model_calls": 6,
+    "total_usd": 0.012,
+    "segments": [
+      {
+        "seg": 1,
+        "beat": "hook",
+        "source_in": "00:00.000",
+        "source_out": "00:10.000",
+        "video": "scene_01",
+        "audio": "music:music_01",
+        "dialogue": [],
+        "transition": "cut",
+        "reason": "Open on the house and the monsoon — a place with a pulse. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:01"
+        ],
+        "risk_flags": [],
+        "duration_s": 10.0
+      },
+      {
+        "seg": 2,
+        "beat": "bond",
+        "source_in": "03:03.500",
+        "source_out": "03:16.500",
+        "video": "scene_07",
+        "audio": "dialogue_and_music:music_01",
+        "dialogue": [
+          {
+            "speaker": "c2",
+            "line": "She's been saying that since we could walk.",
+            "tc": "03:05.000",
+            "lang": "source"
+          },
+          {
+            "speaker": "c1",
+            "line": "And we've been closing our eyes since.",
+            "tc": "03:14.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "She's been saying that since we could walk."
+        },
+        "transition": "cut",
+        "reason": "The family is whole again around a meal. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:07"
+        ],
+        "risk_flags": [],
+        "duration_s": 13.0
+      },
+      {
+        "seg": 3,
+        "beat": "stakes",
+        "source_in": "01:53.500",
+        "source_out": "02:07.500",
+        "video": "scene_05",
+        "audio": "dialogue_and_music:music_01",
+        "dialogue": [
+          {
+            "speaker": "c1",
+            "line": "My firm's dues are due in four months. Sentiment won't pay them.",
+            "tc": "01:55.000",
+            "lang": "source"
+          },
+          {
+            "speaker": "c2",
+            "line": "You always wanted this house sold.",
+            "tc": "02:05.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "My firm's dues are due in four months. Sentiment won't pay them."
+        },
+        "transition": "cut",
+        "reason": "Real stakes, spoken plainly: money against memory. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:05"
+        ],
+        "risk_flags": [],
+        "duration_s": 14.0
+      },
+      {
+        "seg": 4,
+        "beat": "mystery",
+        "source_in": "06:08.500",
+        "source_out": "06:18.500",
+        "video": "scene_13",
+        "audio": "dialogue_and_music:music_01",
+        "dialogue": [
+          {
+            "speaker": "c1",
+            "line": "The granary was sealed. With a new lock.",
+            "tc": "06:10.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "The granary was sealed. With a new lock."
+        },
+        "transition": "cut",
+        "reason": "A question, not a reveal — the house is keeping a secret. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:13"
+        ],
+        "risk_flags": [],
+        "duration_s": 10.0
+      },
+      {
+        "seg": 5,
+        "beat": "turn",
+        "source_in": "07:56.500",
+        "source_out": "08:07.500",
+        "video": "scene_16",
+        "audio": "dialogue_and_music:music_01",
+        "dialogue": [
+          {
+            "speaker": "c2",
+            "line": "I'm sorry I wasn't here, Amma.",
+            "tc": "07:58.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "I'm sorry I wasn't here, Amma."
+        },
+        "transition": "cut",
+        "reason": "A private moment of grief, handled gently. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:16"
+        ],
+        "risk_flags": [],
+        "duration_s": 11.0
+      },
+      {
+        "seg": 6,
+        "beat": "hope",
+        "source_in": "12:23.500",
+        "source_out": "12:37.500",
+        "video": "scene_24",
+        "audio": "dialogue_and_music:music_01",
+        "dialogue": [
+          {
+            "speaker": "c4",
+            "line": "I said I'd come back. I didn't say I'd leave again.",
+            "tc": "12:25.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "I said I'd come back. I didn't say I'd leave again."
+        },
+        "transition": "cut",
+        "reason": "They choose each other — and the house. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:24"
+        ],
+        "risk_flags": [],
+        "duration_s": 14.0
+      }
+    ]
+  },
+  "version": 1
+}

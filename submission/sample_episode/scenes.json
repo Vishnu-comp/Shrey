@@ -1,0 +1,210 @@
+[
+  {"scene_id": "scene_01", "in_tc": "00:00.000", "out_tc": "00:24.000", "title": "The Monsoon House",
+   "summary": "Rain on the tiled roof of the Iyer ancestral home; the courtyard breathes. No dialogue.",
+   "location": "Iyer ancestral home", "primary": [], "secondary": [],
+   "mood": ["atmospheric", "nostalgic"], "content_flags": {}, "lines": [],
+   "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.6},
+
+  {"scene_id": "scene_02", "in_tc": "00:24.000", "out_tc": "00:52.000", "title": "Car Banter",
+   "summary": "Car ride; siblings banter over the sale.",
+   "location": "highway", "primary": ["c1"], "secondary": ["c2"],
+   "mood": ["humor", "conflict"], "content_flags": {}, "lines": [
+     {"tc": "00:28.000", "speaker": "c1", "text": "Six months to sell, Meera. That's what the papers say.", "lang": "source"},
+     {"tc": "00:35.000", "speaker": "c2", "text": "The papers don't remember who fed us here.", "lang": "source"},
+     {"tc": "00:44.000", "speaker": "c1", "text": "The papers don't have to.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.55},
+
+  {"scene_id": "scene_03", "in_tc": "00:52.000", "out_tc": "01:18.000", "title": "Welcome at the Gate",
+   "summary": "The siblings arrive; Suresh greets them at his shop.",
+   "location": "town gate", "primary": ["c1", "c2"], "secondary": ["c5"],
+   "mood": ["warm", "community"], "content_flags": {}, "lines": [
+     {"tc": "01:00.000", "speaker": "c5", "text": "Mungaru, aagi! Aana, aana.", "lang": "kn", "translation": "Welcome home! Come in, come in."},
+     {"tc": "01:08.000", "speaker": "c2", "text": "We grew up crossing this road, Anand.", "lang": "source"},
+     {"tc": "01:14.000", "speaker": "c1", "text": "I grew up running from it.", "lang": "source"}
+   ], "tracks": ["music_03"], "emotional_turn": false, "story_weight": 0.6},
+
+  {"scene_id": "scene_04", "in_tc": "01:18.000", "out_tc": "01:47.000", "title": "The Dusty Hall",
+   "summary": "The dusty ancestral hall, old photographs on the wall.",
+   "location": "ancestral hall", "primary": ["c1", "c2"], "secondary": [],
+   "mood": ["nostalgic", "tender"], "content_flags": {}, "lines": [
+     {"tc": "01:26.000", "speaker": "c2", "text": "Mother kept every photo on this wall.", "lang": "source"},
+     {"tc": "01:38.000", "speaker": "c1", "text": "I didn't know we kept so many.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.55},
+
+  {"scene_id": "scene_05", "in_tc": "01:47.000", "out_tc": "02:19.000", "title": "The Argument",
+   "summary": "Siblings argue at the table over selling the house.",
+   "location": "dining table", "primary": ["c1", "c2"], "secondary": [],
+   "mood": ["conflict", "stakes"], "content_flags": {}, "lines": [
+     {"tc": "01:55.000", "speaker": "c1", "text": "My firm's dues are due in four months. Sentiment won't pay them.", "lang": "source"},
+     {"tc": "02:05.000", "speaker": "c2", "text": "You always wanted this house sold.", "lang": "source"},
+     {"tc": "02:12.000", "speaker": "c1", "text": "I wanted us to survive.", "lang": "source"}
+   ], "tracks": ["music_02"], "emotional_turn": true, "story_weight": 0.8},
+
+  {"scene_id": "scene_06", "in_tc": "02:19.000", "out_tc": "02:48.000", "title": "Lakshmi's Arrival",
+   "summary": "Lakshmi arrives with the evening meal; old habits, old tension.",
+   "location": "kitchen door", "primary": ["c3"], "secondary": ["c1", "c2"],
+   "mood": ["warm"], "content_flags": {}, "lines": [
+     {"tc": "02:26.000", "speaker": "c3", "text": "Thirty years I cooked in this kitchen. You two are late.", "lang": "source"},
+     {"tc": "02:40.000", "speaker": "c1", "text": "Sorry, Amma. I mean, Lakshmi.", "lang": "source"}
+   ], "tracks": ["music_03"], "emotional_turn": false, "story_weight": 0.5},
+
+  {"scene_id": "scene_07", "in_tc": "02:48.000", "out_tc": "03:20.000", "title": "Dinner Table",
+   "summary": "Dinner; Lakshmi's cooking; old habits survive.",
+   "location": "dining table", "primary": ["c1", "c2"], "secondary": ["c3"],
+   "mood": ["warm", "humor"], "content_flags": {}, "lines": [
+     {"tc": "02:56.000", "speaker": "c3", "text": "Kannu chusi, kaasu kaanu.", "lang": "kn", "translation": "Close your eyes and taste the food."},
+     {"tc": "03:05.000", "speaker": "c2", "text": "She's been saying that since we could walk.", "lang": "source"},
+     {"tc": "03:14.000", "speaker": "c1", "text": "And we've been closing our eyes since.", "lang": "source"}
+   ], "tracks": ["music_03"], "emotional_turn": false, "story_weight": 0.7},
+
+  {"scene_id": "scene_08", "in_tc": "03:20.000", "out_tc": "03:50.000", "title": "Power Cut",
+   "summary": "Power cut; the old house creaks; Meera is frightened.",
+   "location": "bedroom", "primary": ["c1", "c2"], "secondary": [],
+   "mood": ["tense", "frightening"], "content_flags": {"frightening": 2}, "lines": [
+     {"tc": "03:30.000", "speaker": "c2", "text": "Did you hear that?", "lang": "source"},
+     {"tc": "03:42.000", "speaker": "c1", "text": "Old house. It's just the wind.", "lang": "source"}
+   ], "tracks": ["music_02"], "emotional_turn": false, "story_weight": 0.5},
+
+  {"scene_id": "scene_09", "in_tc": "03:50.000", "out_tc": "04:22.000", "title": "The Hidden Ledger",
+   "summary": "A second back to the cupboard; a ledger from 1998.",
+   "location": "store room", "primary": ["c2"], "secondary": ["c5"],
+   "mood": ["mystery"], "content_flags": {}, "lines": [
+     {"tc": "04:02.000", "speaker": "c2", "text": "This cupboard has a second back.", "lang": "source"},
+     {"tc": "04:15.000", "speaker": "c2", "text": "A ledger, in Mother's handwriting. 1998.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.75},
+
+  {"scene_id": "scene_10", "in_tc": "04:22.000", "out_tc": "04:55.000", "title": "The Shop Confrontation",
+   "summary": "Meera confronts Suresh at his shop; he flares.",
+   "location": "general store", "primary": ["c5"], "secondary": ["c2"],
+   "mood": ["conflict", "tense"], "content_flags": {"strong_language": 1}, "lines": [
+     {"tc": "04:30.000", "speaker": "c2", "text": "You've been watching this house for thirty years, Suresh.", "lang": "source"},
+     {"tc": "04:41.000", "speaker": "c5", "text": "I watched my shop burn the year your father sold my land!", "lang": "source"},
+     {"tc": "04:50.000", "speaker": "c2", "text": "Your father never sold my land.", "lang": "source"}
+   ], "tracks": ["music_02"], "emotional_turn": false, "story_weight": 0.7},
+
+  {"scene_id": "scene_11", "in_tc": "04:55.000", "out_tc": "05:28.000", "title": "Ravi Returns",
+   "summary": "Ravi appears at the gate after ten years.",
+   "location": "house gate", "primary": ["c1"], "secondary": ["c4"],
+   "mood": ["warm", "identity"], "content_flags": {}, "lines": [
+     {"tc": "05:03.000", "speaker": "c4", "text": "You sent me away. I came back anyway.", "lang": "source"},
+     {"tc": "05:15.000", "speaker": "c1", "text": "Ten years, Ravi. Ten years.", "lang": "source"},
+     {"tc": "05:24.000", "speaker": "c4", "text": "Time doesn't keep your hours, Anand.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": true, "story_weight": 0.7},
+
+  {"scene_id": "scene_12", "in_tc": "05:28.000", "out_tc": "06:00.000", "title": "Veranda Talk",
+   "summary": "Meera and Ravi talk on the veranda; he speaks in Kannada.",
+   "location": "veranda", "primary": ["c2"], "secondary": ["c4"],
+   "mood": ["tender", "identity"], "content_flags": {}, "lines": [
+     {"tc": "05:38.000", "speaker": "c4", "text": "Ninnu noddala. Nee anna one, naanu noddala.", "lang": "kn", "translation": "I won't leave you. Your brother is my blood brother — I won't leave you."},
+     {"tc": "05:52.000", "speaker": "c2", "text": "Nobody's promised us anything about this house.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.6},
+
+  {"scene_id": "scene_13", "in_tc": "06:00.000", "out_tc": "06:32.000", "title": "The Locked Room",
+   "summary": "The sealed granary room, a new lock.",
+   "location": "granary", "primary": ["c1"], "secondary": [],
+   "mood": ["suspense", "mystery"], "content_flags": {}, "lines": [
+     {"tc": "06:10.000", "speaker": "c1", "text": "The granary was sealed. With a new lock.", "lang": "source"},
+     {"tc": "06:24.000", "speaker": "c1", "text": "Who seals a room in a house no one lives in?", "lang": "source"}
+   ], "tracks": ["music_02"], "emotional_turn": false, "story_weight": 0.8},
+
+  {"scene_id": "scene_14", "in_tc": "06:32.000", "out_tc": "07:05.000", "title": "To Open or Not",
+   "summary": "The siblings decide whether to open the granary.",
+   "location": "granary door", "primary": ["c1", "c2"], "secondary": [],
+   "mood": ["conflict", "stakes"], "content_flags": {}, "lines": [
+     {"tc": "06:44.000", "speaker": "c2", "text": "Whatever's in there, we open it together.", "lang": "source"},
+     {"tc": "06:58.000", "speaker": "c1", "text": "Together. Fine. But I'm breaking the lock.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.6},
+
+  {"scene_id": "scene_15", "in_tc": "07:05.000", "out_tc": "07:37.000", "title": "Village Feast",
+   "summary": "The village feast; half the town shows up.",
+   "location": "feast ground", "primary": ["c1", "c2"], "secondary": ["c5", "c6"],
+   "mood": ["warm", "community", "festive"], "content_flags": {}, "lines": [
+     {"tc": "07:15.000", "speaker": "c6", "text": "Aaga kodiya, kanna! Vaa, vaa!", "lang": "kn", "translation": "The chicken's ready, child! Come, come!"},
+     {"tc": "07:28.000", "speaker": "c2", "text": "Half the village is here. The other half brought food.", "lang": "source"}
+   ], "tracks": ["music_03"], "emotional_turn": false, "story_weight": 0.75},
+
+  {"scene_id": "scene_16", "in_tc": "07:37.000", "out_tc": "08:10.000", "title": "Mother's Kitchen",
+   "summary": "Meera alone in her mother's kitchen.",
+   "location": "kitchen", "primary": ["c2"], "secondary": [],
+   "mood": ["tender", "grief"], "content_flags": {"grief": 1, "death_reference": 1}, "lines": [
+     {"tc": "07:48.000", "speaker": "c2", "text": "You made my first dosa here. You never left the stove, did you?", "lang": "source"},
+     {"tc": "07:58.000", "speaker": "c2", "text": "I'm sorry I wasn't here, Amma.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": true, "story_weight": 0.85},
+
+  {"scene_id": "scene_17", "in_tc": "08:10.000", "out_tc": "08:42.000", "title": "The Old Letters",
+   "summary": "Anand reads the mother's old letters.",
+   "location": "study", "primary": ["c1"], "secondary": [],
+   "mood": ["mystery"], "content_flags": {}, "lines": [
+     {"tc": "08:20.000", "speaker": "c1", "text": "Every letter ends with the same line.", "lang": "source"},
+     {"tc": "08:34.000", "speaker": "c1", "text": "When the monsoon ends, you will know why I stayed.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.75},
+
+  {"scene_id": "scene_18", "in_tc": "08:42.000", "out_tc": "09:15.000", "title": "Ravi's Warning",
+   "summary": "Ravi tells Anand he knows something; Anand pushes back.",
+   "location": "study", "primary": ["c1"], "secondary": ["c4"],
+   "mood": ["tense", "identity", "conflict"], "content_flags": {}, "lines": [
+     {"tc": "08:52.000", "speaker": "c4", "text": "You didn't send me away because I was a friend.", "lang": "source"},
+     {"tc": "09:05.000", "speaker": "c1", "text": "Then why did you come back?", "lang": "source"}
+   ], "tracks": ["music_02"], "emotional_turn": false, "story_weight": 0.7},
+
+  {"scene_id": "scene_19", "in_tc": "09:15.000", "out_tc": "10:00.000", "title": "The Letter",
+   "summary": "The mother's letter is read aloud; the land was signed away.",
+   "location": "veranda", "primary": ["c1"], "secondary": ["c2", "c3"],
+   "mood": ["devastating", "revelation"], "content_flags": {"grief": 2, "twist": 2}, "lines": [
+     {"tc": "09:25.000", "speaker": "c1", "text": "My dearest children — I have signed away the land.", "lang": "source"},
+     {"tc": "09:38.000", "speaker": "c1", "text": "This house was never legally ours. And that was my love.", "lang": "source"},
+     {"tc": "09:52.000", "speaker": "c2", "text": "Mother sold our house? When?", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": true, "story_weight": 1.0,
+   "spoiler_note": "PROTECTED: P1 revealed in this scene at 09:38.000"},
+
+  {"scene_id": "scene_20", "in_tc": "10:00.000", "out_tc": "10:32.000", "title": "Meera's Anger",
+   "summary": "Meera's anger at her mother, after the letter.",
+   "location": "kitchen", "primary": ["c2"], "secondary": [],
+   "mood": ["grief", "conflict"], "content_flags": {"grief": 2, "post_reveal": 1}, "lines": [
+     {"tc": "10:10.000", "speaker": "c2", "text": "She sold it and wrote us a poem about it.", "lang": "source"},
+     {"tc": "10:24.000", "speaker": "c2", "text": "I don't know my mother. I didn't.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.8,
+   "spoiler_note": "PROTECTED: post-reveal content (P1)"},
+
+  {"scene_id": "scene_21", "in_tc": "10:32.000", "out_tc": "11:05.000", "title": "The Key Line",
+   "summary": "Close-up of the letter's key line; the date on the deed.",
+   "location": "veranda", "primary": ["c1"], "secondary": [],
+   "mood": ["revelation"], "content_flags": {"twist": 2, "post_reveal": 1}, "lines": [
+     {"tc": "10:40.000", "speaker": "c1", "text": "The debt was mine to carry, not yours.", "lang": "source"},
+     {"tc": "10:58.000", "speaker": "c1", "text": "The deed was signed in 1998. Before I was born.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.9,
+   "spoiler_note": "PROTECTED: continues P1 reveal; top historic performer (see historic_performance.json)"},
+
+  {"scene_id": "scene_22", "in_tc": "11:05.000", "out_tc": "11:40.000", "title": "Suresh's Truth",
+   "summary": "Suresh reveals the original deed; he was mother's ally.",
+   "location": "general store", "primary": ["c5"], "secondary": ["c2"],
+   "mood": ["revelation", "warm"], "content_flags": {"twist": 1, "post_reveal": 1}, "lines": [
+     {"tc": "11:12.000", "speaker": "c5", "text": "I kept the original deed for thirty years.", "lang": "source"},
+     {"tc": "11:20.000", "speaker": "c5", "text": "Your mother asked me to. I was never your enemy.", "lang": "source"},
+     {"tc": "11:34.000", "speaker": "c2", "text": "Then why let us think you were?", "lang": "source"}
+   ], "tracks": ["music_03"], "emotional_turn": true, "story_weight": 0.9,
+   "spoiler_note": "PROTECTED: P2 revealed in this scene at 11:20.000"},
+
+  {"scene_id": "scene_23", "in_tc": "11:40.000", "out_tc": "12:15.000", "title": "The Decision",
+   "summary": "The siblings decide to keep the house.",
+   "location": "veranda", "primary": ["c1", "c2"], "secondary": [],
+   "mood": ["hope", "resolve"], "content_flags": {}, "lines": [
+     {"tc": "11:50.000", "speaker": "c1", "text": "We keep the house. Not for the papers. For the wall of photos.", "lang": "source"},
+     {"tc": "12:05.000", "speaker": "c2", "text": "Together. Like the old photos say.", "lang": "source"}
+   ], "tracks": ["music_03"], "emotional_turn": true, "story_weight": 0.9},
+
+  {"scene_id": "scene_24", "in_tc": "12:15.000", "out_tc": "12:50.000", "title": "The Gathering",
+   "summary": "Neighbors and family gather to help.",
+   "location": "courtyard", "primary": ["c1", "c2"], "secondary": ["c3", "c4"],
+   "mood": ["warm", "community", "hope"], "content_flags": {}, "lines": [
+     {"tc": "12:25.000", "speaker": "c4", "text": "I said I'd come back. I didn't say I'd leave again.", "lang": "source"},
+     {"tc": "12:40.000", "speaker": "c3", "text": "Aana, aana. Kaana naa.", "lang": "kn", "translation": "Come, come. Stay."}
+   ], "tracks": ["music_03"], "emotional_turn": false, "story_weight": 0.8},
+
+  {"scene_id": "scene_25", "in_tc": "12:50.000", "out_tc": "14:00.000", "title": "Dawn After Rain",
+   "summary": "Dawn after rain over the house. No dialogue in frame; a closing voice-over.",
+   "location": "house exterior", "primary": [], "secondary": [],
+   "mood": ["atmospheric", "warm"], "content_flags": {}, "lines": [
+     {"tc": "13:20.000", "speaker": "c1", "text": "Some houses don't keep you. You keep them.", "lang": "source"}
+   ], "tracks": ["music_01"], "emotional_turn": false, "story_weight": 0.8}
+]

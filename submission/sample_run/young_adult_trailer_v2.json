@@ -1,0 +1,562 @@
+{
+  "trailer_id": "young_adult_v2",
+  "audience": "ya",
+  "duration_seconds": 68.0,
+  "audience_promise": "Two siblings, one house, and everyone who never left it — the arguments are the fun part.",
+  "creative_brief": {
+    "audience": "ya",
+    "objective": "Highlight pace, humour, identity and character conflict. (profile: Young adult viewers)",
+    "promise": "Two siblings, one house, and everyone who never left it — the arguments are the fun part.",
+    "positioning": "Fast, funny, a little tense. Identity and conflict drive the cut. The mystery is teased hard but the central twist is never shown, and no frame exaggerates what the episode actually contains.",
+    "beats": [
+      {
+        "beat": "hook",
+        "name": "Car banter",
+        "intention": "Open mid-argument. Pace from frame one.",
+        "moods": [
+          "humor",
+          "conflict"
+        ],
+        "max_duration_s": 10.0,
+        "target_s": 9.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "conflict",
+        "name": "The dues",
+        "intention": "Real stakes: money, siblings, the house.",
+        "moods": [
+          "conflict",
+          "stakes"
+        ],
+        "max_duration_s": 12.0,
+        "target_s": 11.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "identity",
+        "name": "The one who came back",
+        "intention": "Identity: estrangement, loyalty, ten years.",
+        "moods": [
+          "identity",
+          "warm"
+        ],
+        "max_duration_s": 12.0,
+        "target_s": 11.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "tension",
+        "name": "The dark",
+        "intention": "A tense beat the episode actually earns — no fake intensity.",
+        "moods": [
+          "tense",
+          "suspense"
+        ],
+        "max_duration_s": 12.0,
+        "target_s": 10.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "mystery",
+        "name": "The sealed room",
+        "intention": "Mystery framed as a question the cast can't stop asking.",
+        "moods": [
+          "suspense",
+          "mystery"
+        ],
+        "max_duration_s": 12.0,
+        "target_s": 11.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "turn",
+        "name": "What it cost",
+        "intention": "The emotional cost, in one quiet kitchen.",
+        "moods": [
+          "grief",
+          "identity",
+          "tender"
+        ],
+        "max_duration_s": 10.0,
+        "target_s": 9.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "title",
+        "name": "Title",
+        "intention": "Dawn card with YA tagline.",
+        "moods": [
+          "atmospheric"
+        ],
+        "max_duration_s": 7.0,
+        "target_s": 6.0,
+        "needs_dialect_line": false
+      }
+    ],
+    "target_duration_s": 75.0
+  },
+  "music": {
+    "primary_track": "music_01",
+    "source": "contract:music-01",
+    "notes": "re-selected after music-02 lapsed; previously music_02"
+  },
+  "segments": [
+    {
+      "seg": 1,
+      "beat": "hook",
+      "source_in": "00:26.500",
+      "source_out": "00:35.500",
+      "video": "scene_02",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c1",
+          "line": "Six months to sell, Meera. That's what the papers say.",
+          "tc": "00:28.000",
+          "lang": "source"
+        },
+        {
+          "speaker": "c2",
+          "line": "The papers don't remember who fed us here.",
+          "tc": "00:35.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "Six months to sell, Meera. That's what the papers say."
+      },
+      "transition": "cut",
+      "reason": "Open mid-argument. Pace from frame one. Source: Car Banter (00:24.000). Car ride; siblings banter over the sale.",
+      "evidence": [
+        "scene:02",
+        "dialogue:scene_02:0",
+        "dialogue:scene_02:1",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 9.0
+    },
+    {
+      "seg": 2,
+      "beat": "conflict",
+      "source_in": "01:53.500",
+      "source_out": "02:05.500",
+      "video": "scene_05",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c1",
+          "line": "My firm's dues are due in four months. Sentiment won't pay them.",
+          "tc": "01:55.000",
+          "lang": "source"
+        },
+        {
+          "speaker": "c2",
+          "line": "You always wanted this house sold.",
+          "tc": "02:05.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "My firm's dues are due in four months. Sentiment won't pay them."
+      },
+      "transition": "dissolve",
+      "reason": "Real stakes: money, siblings, the house. Source: The Argument (01:47.000). Siblings argue at the table over selling the house.",
+      "evidence": [
+        "scene:05",
+        "dialogue:scene_05:0",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 12.0
+    },
+    {
+      "seg": 3,
+      "beat": "identity",
+      "source_in": "05:01.500",
+      "source_out": "05:12.500",
+      "video": "scene_11",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c4",
+          "line": "You sent me away. I came back anyway.",
+          "tc": "05:03.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "You sent me away. I came back anyway."
+      },
+      "transition": "dissolve",
+      "reason": "Identity: estrangement, loyalty, ten years. Source: Ravi Returns (04:55.000). Ravi appears at the gate after ten years.",
+      "evidence": [
+        "scene:11",
+        "dialogue:scene_11:0",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 11.0
+    },
+    {
+      "seg": 4,
+      "beat": "tension",
+      "source_in": "06:08.500",
+      "source_out": "06:18.500",
+      "video": "scene_13",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c1",
+          "line": "The granary was sealed. With a new lock.",
+          "tc": "06:10.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "The granary was sealed. With a new lock."
+      },
+      "transition": "cut",
+      "reason": "A tense beat the episode actually earns — no fake intensity. Source: The Locked Room (06:00.000). The sealed granary room, a new lock.",
+      "evidence": [
+        "scene:13",
+        "dialogue:scene_13:0",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 10.0
+    },
+    {
+      "seg": 5,
+      "beat": "mystery",
+      "source_in": "04:00.500",
+      "source_out": "04:11.500",
+      "video": "scene_09",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c2",
+          "line": "This cupboard has a second back.",
+          "tc": "04:02.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "This cupboard has a second back."
+      },
+      "transition": "cut",
+      "reason": "Mystery framed as a question the cast can't stop asking. Source: The Hidden Ledger (03:50.000). A second back to the cupboard; a ledger from 1998.",
+      "evidence": [
+        "scene:09",
+        "dialogue:scene_09:0",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 11.0
+    },
+    {
+      "seg": 6,
+      "beat": "turn",
+      "source_in": "07:56.500",
+      "source_out": "08:05.500",
+      "video": "scene_16",
+      "audio": "dialogue_and_music:music_01",
+      "dialogue": [
+        {
+          "speaker": "c2",
+          "line": "I'm sorry I wasn't here, Amma.",
+          "tc": "07:58.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "I'm sorry I wasn't here, Amma."
+      },
+      "transition": "dissolve",
+      "reason": "The emotional cost, in one quiet kitchen. Source: Mother's Kitchen (07:37.000). Meera alone in her mother's kitchen.",
+      "evidence": [
+        "scene:16",
+        "dialogue:scene_16:1",
+        "contract:music-01"
+      ],
+      "risk_flags": [
+        "death_reference",
+        "grief"
+      ],
+      "duration_s": 9.0
+    },
+    {
+      "seg": 7,
+      "beat": "title",
+      "source_in": "13:54.000",
+      "source_out": "14:00.000",
+      "video": "scene_25",
+      "audio": "music:music_01",
+      "dialogue": [],
+      "text_card": "MONSOON HOUSE — The arguments are the fun part",
+      "transition": "fade",
+      "reason": "Dawn card with YA tagline. Source: Dawn After Rain (12:50.000). Dawn after rain over the house. No dialogue in frame; a closing voice-over.",
+      "evidence": [
+        "scene:25",
+        "contract:music-01"
+      ],
+      "risk_flags": [],
+      "duration_s": 6.0
+    }
+  ],
+  "human_approvals": [
+    {
+      "decision": "Music 'Distant Drums' license window",
+      "owner": "legal",
+      "status": "pending",
+      "reason": "contract lapses 2026-10-15; confirm trailer ships before expiry"
+    }
+  ],
+  "assumptions": [
+    "mock/replay mode: deterministic stand-in for the live model (no API keys required)",
+    "scene descriptions are treated as data, never as instructions",
+    "historic engagement used only as a documented tie-breaker hypothesis, never as the selection rule"
+  ],
+  "validation": {
+    "status": "PASS",
+    "checks": [
+      {
+        "check": "source_accuracy",
+        "status": "pass",
+        "detail": "all scene ids, timecodes and evidence refs resolve",
+        "segments": []
+      },
+      {
+        "check": "spoiler",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "rights",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "rating",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "story_truth",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "cultural",
+        "status": "pass",
+        "detail": "not applicable to this audience",
+        "segments": []
+      },
+      {
+        "check": "accessibility",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "budget",
+        "status": "pass",
+        "detail": "within budget (13 calls, $0.05)",
+        "segments": []
+      }
+    ],
+    "warnings": [],
+    "assumptions": [
+      "mock/replay mode: deterministic stand-in for the live model (no API keys required)",
+      "scene descriptions are treated as data, never as instructions",
+      "historic engagement used only as a documented tie-breaker hypothesis, never as the selection rule"
+    ]
+  },
+  "cost_estimate": {
+    "model_calls": 13,
+    "task_cost_usd": 0.034,
+    "media_usd": 0.016667,
+    "total_usd": 0.050667,
+    "within_budget": true,
+    "breakdown": {
+      "promise": 0.01,
+      "rank": 0.012,
+      "select": 0.012
+    }
+  },
+  "fallback_plan": {
+    "description": "lower-cost re-plan: reuses cached top-1 candidates, skips re-ranking passes, no voice-over; usable if the main plan exceeds the configured budget",
+    "model_calls": 6,
+    "total_usd": 0.012,
+    "segments": [
+      {
+        "seg": 1,
+        "beat": "hook",
+        "source_in": "00:26.500",
+        "source_out": "00:35.500",
+        "video": "scene_02",
+        "audio": "dialogue_and_music:music_02",
+        "dialogue": [
+          {
+            "speaker": "c1",
+            "line": "Six months to sell, Meera. That's what the papers say.",
+            "tc": "00:28.000",
+            "lang": "source"
+          },
+          {
+            "speaker": "c2",
+            "line": "The papers don't remember who fed us here.",
+            "tc": "00:35.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "Six months to sell, Meera. That's what the papers say."
+        },
+        "transition": "cut",
+        "reason": "Open mid-argument. Pace from frame one. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:02"
+        ],
+        "risk_flags": [],
+        "duration_s": 9.0
+      },
+      {
+        "seg": 2,
+        "beat": "conflict",
+        "source_in": "01:53.500",
+        "source_out": "02:04.500",
+        "video": "scene_05",
+        "audio": "dialogue_and_music:music_02",
+        "dialogue": [
+          {
+            "speaker": "c1",
+            "line": "My firm's dues are due in four months. Sentiment won't pay them.",
+            "tc": "01:55.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "My firm's dues are due in four months. Sentiment won't pay them."
+        },
+        "transition": "cut",
+        "reason": "Real stakes: money, siblings, the house. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:05"
+        ],
+        "risk_flags": [],
+        "duration_s": 11.0
+      },
+      {
+        "seg": 3,
+        "beat": "identity",
+        "source_in": "05:01.500",
+        "source_out": "05:12.500",
+        "video": "scene_11",
+        "audio": "dialogue_and_music:music_02",
+        "dialogue": [
+          {
+            "speaker": "c4",
+            "line": "You sent me away. I came back anyway.",
+            "tc": "05:03.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "You sent me away. I came back anyway."
+        },
+        "transition": "cut",
+        "reason": "Identity: estrangement, loyalty, ten years. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:11"
+        ],
+        "risk_flags": [],
+        "duration_s": 11.0
+      },
+      {
+        "seg": 4,
+        "beat": "tension",
+        "source_in": "06:08.500",
+        "source_out": "06:18.500",
+        "video": "scene_13",
+        "audio": "dialogue_and_music:music_02",
+        "dialogue": [
+          {
+            "speaker": "c1",
+            "line": "The granary was sealed. With a new lock.",
+            "tc": "06:10.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "The granary was sealed. With a new lock."
+        },
+        "transition": "cut",
+        "reason": "A tense beat the episode actually earns — no fake intensity. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:13"
+        ],
+        "risk_flags": [],
+        "duration_s": 10.0
+      },
+      {
+        "seg": 5,
+        "beat": "mystery",
+        "source_in": "04:00.500",
+        "source_out": "04:11.500",
+        "video": "scene_09",
+        "audio": "dialogue_and_music:music_02",
+        "dialogue": [
+          {
+            "speaker": "c2",
+            "line": "This cupboard has a second back.",
+            "tc": "04:02.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "This cupboard has a second back."
+        },
+        "transition": "cut",
+        "reason": "Mystery framed as a question the cast can't stop asking. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:09"
+        ],
+        "risk_flags": [],
+        "duration_s": 11.0
+      },
+      {
+        "seg": 6,
+        "beat": "turn",
+        "source_in": "07:56.500",
+        "source_out": "08:05.500",
+        "video": "scene_16",
+        "audio": "dialogue_and_music:music_02",
+        "dialogue": [
+          {
+            "speaker": "c2",
+            "line": "I'm sorry I wasn't here, Amma.",
+            "tc": "07:58.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "I'm sorry I wasn't here, Amma."
+        },
+        "transition": "cut",
+        "reason": "The emotional cost, in one quiet kitchen. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:16"
+        ],
+        "risk_flags": [],
+        "duration_s": 9.0
+      }
+    ]
+  },
+  "version": 2
+}

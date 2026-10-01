@@ -1,0 +1,481 @@
+{
+  "trailer_id": "dialect_region_v1",
+  "audience": "dialect",
+  "duration_seconds": 45.0,
+  "audience_promise": "A tense family story told in a familiar voice — the house, the feasts, and the words home is made of.",
+  "creative_brief": {
+    "audience": "dialect",
+    "objective": "Show that the release understands the Kannada-speaking region's language and cultural context. (profile: Dialect-region viewers (Kannada belt))",
+    "promise": "A tense family story told in a familiar voice — the house, the feasts, and the words home is made of.",
+    "positioning": "Told in a familiar voice: real Kannada lines, real food, real community. The dialect is a living register the characters think in — never a joke, never a costume.",
+    "beats": [
+      {
+        "beat": "hook",
+        "name": "Welcome at the gate",
+        "intention": "Arrival, in Kannada, like every arrival here.",
+        "moods": [
+          "warm",
+          "community"
+        ],
+        "max_duration_s": 8.0,
+        "target_s": 8.0,
+        "needs_dialect_line": true
+      },
+      {
+        "beat": "voice",
+        "name": "The familiar voice",
+        "intention": "A character thinks in Kannada — belonging made audible.",
+        "moods": [
+          "tender",
+          "identity"
+        ],
+        "max_duration_s": 8.0,
+        "target_s": 8.0,
+        "needs_dialect_line": true
+      },
+      {
+        "beat": "warmth",
+        "name": "The table",
+        "intention": "Food and idiom — how the family says it.",
+        "moods": [
+          "warm",
+          "humor"
+        ],
+        "max_duration_s": 8.0,
+        "target_s": 8.0,
+        "needs_dialect_line": true
+      },
+      {
+        "beat": "community",
+        "name": "The village feast",
+        "intention": "The region shows up: feasts, neighbors, belonging.",
+        "moods": [
+          "community",
+          "warm",
+          "festive"
+        ],
+        "max_duration_s": 8.0,
+        "target_s": 8.0,
+        "needs_dialect_line": true
+      },
+      {
+        "beat": "mystery",
+        "name": "The question",
+        "intention": "The family's central question, framed with respect.",
+        "moods": [
+          "mystery"
+        ],
+        "max_duration_s": 8.0,
+        "target_s": 7.0,
+        "needs_dialect_line": false
+      },
+      {
+        "beat": "title",
+        "name": "Title",
+        "intention": "Dawn card, bilingual.",
+        "moods": [
+          "atmospheric",
+          "warm"
+        ],
+        "max_duration_s": 7.0,
+        "target_s": 6.0,
+        "needs_dialect_line": false
+      }
+    ],
+    "target_duration_s": 45.0
+  },
+  "music": {
+    "primary_track": "music_03",
+    "source": "contract:music-03",
+    "notes": "licensed for this audience and territory IN at run date"
+  },
+  "segments": [
+    {
+      "seg": 1,
+      "beat": "hook",
+      "source_in": "00:58.500",
+      "source_out": "01:06.500",
+      "video": "scene_03",
+      "audio": "dialogue_and_music:music_03",
+      "dialogue": [
+        {
+          "speaker": "c5",
+          "line": "Welcome home! Come in, come in.",
+          "tc": "01:00.000",
+          "lang": "kn",
+          "translation": "Welcome home! Come in, come in."
+        }
+      ],
+      "subtitle": {
+        "kn": "Welcome home! Come in, come in."
+      },
+      "transition": "cut",
+      "reason": "Arrival, in Kannada, like every arrival here. Source: Welcome at the Gate (00:52.000). The siblings arrive; Suresh greets them at his shop.",
+      "evidence": [
+        "scene:03",
+        "dialogue:scene_03:0",
+        "contract:music-03"
+      ],
+      "risk_flags": [],
+      "duration_s": 8.0
+    },
+    {
+      "seg": 2,
+      "beat": "voice",
+      "source_in": "05:36.500",
+      "source_out": "05:44.500",
+      "video": "scene_12",
+      "audio": "dialogue_and_music:music_03",
+      "dialogue": [
+        {
+          "speaker": "c4",
+          "line": "I won't leave you. Your brother is my blood brother — I won't leave you.",
+          "tc": "05:38.000",
+          "lang": "kn",
+          "translation": "I won't leave you. Your brother is my blood brother — I won't leave you."
+        }
+      ],
+      "subtitle": {
+        "kn": "I won't leave you. Your brother is my blood brother — I won't leave you."
+      },
+      "transition": "cut",
+      "reason": "A character thinks in Kannada — belonging made audible. Source: Veranda Talk (05:28.000). Meera and Ravi talk on the veranda; he speaks in Kannada.",
+      "evidence": [
+        "scene:12",
+        "dialogue:scene_12:0",
+        "contract:music-03"
+      ],
+      "risk_flags": [],
+      "duration_s": 8.0
+    },
+    {
+      "seg": 3,
+      "beat": "warmth",
+      "source_in": "07:13.500",
+      "source_out": "07:21.500",
+      "video": "scene_15",
+      "audio": "dialogue_and_music:music_03",
+      "dialogue": [
+        {
+          "speaker": "c6",
+          "line": "The chicken's ready, child! Come, come!",
+          "tc": "07:15.000",
+          "lang": "kn",
+          "translation": "The chicken's ready, child! Come, come!"
+        }
+      ],
+      "subtitle": {
+        "kn": "The chicken's ready, child! Come, come!"
+      },
+      "transition": "cut",
+      "reason": "Food and idiom — how the family says it. Source: Village Feast (07:05.000). The village feast; half the town shows up.",
+      "evidence": [
+        "scene:15",
+        "dialogue:scene_15:0",
+        "contract:music-03"
+      ],
+      "risk_flags": [],
+      "duration_s": 8.0
+    },
+    {
+      "seg": 4,
+      "beat": "community",
+      "source_in": "12:23.500",
+      "source_out": "12:31.500",
+      "video": "scene_24",
+      "audio": "dialogue_and_music:music_03",
+      "dialogue": [
+        {
+          "speaker": "c4",
+          "line": "I said I'd come back. I didn't say I'd leave again.",
+          "tc": "12:25.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "I said I'd come back. I didn't say I'd leave again."
+      },
+      "transition": "cut",
+      "reason": "The region shows up: feasts, neighbors, belonging. Source: The Gathering (12:15.000). Neighbors and family gather to help.",
+      "evidence": [
+        "scene:24",
+        "dialogue:scene_24:0",
+        "contract:music-03"
+      ],
+      "risk_flags": [],
+      "duration_s": 8.0
+    },
+    {
+      "seg": 5,
+      "beat": "mystery",
+      "source_in": "06:08.500",
+      "source_out": "06:15.500",
+      "video": "scene_13",
+      "audio": "dialogue_and_music:music_03",
+      "dialogue": [
+        {
+          "speaker": "c1",
+          "line": "The granary was sealed. With a new lock.",
+          "tc": "06:10.000",
+          "lang": "source"
+        }
+      ],
+      "subtitle": {
+        "en": "The granary was sealed. With a new lock."
+      },
+      "transition": "cut",
+      "reason": "The family's central question, framed with respect. Source: The Locked Room (06:00.000). The sealed granary room, a new lock.",
+      "evidence": [
+        "scene:13",
+        "dialogue:scene_13:0",
+        "contract:music-03"
+      ],
+      "risk_flags": [],
+      "duration_s": 7.0
+    },
+    {
+      "seg": 6,
+      "beat": "title",
+      "source_in": "13:54.000",
+      "source_out": "14:00.000",
+      "video": "scene_25",
+      "audio": "music:music_03",
+      "dialogue": [],
+      "text_card": "MONSOON HOUSE — A story told in a familiar voice",
+      "transition": "fade",
+      "reason": "Dawn card, bilingual. Source: Dawn After Rain (12:50.000). Dawn after rain over the house. No dialogue in frame; a closing voice-over.",
+      "evidence": [
+        "scene:25",
+        "contract:music-03"
+      ],
+      "risk_flags": [],
+      "duration_s": 6.0
+    }
+  ],
+  "human_approvals": [
+    {
+      "decision": "Dialect treatment of all Kannada segments",
+      "owner": "cultural",
+      "status": "pending",
+      "reason": "native-speaker review that the dialect is used with respect"
+    }
+  ],
+  "assumptions": [
+    "mock/replay mode: deterministic stand-in for the live model (no API keys required)",
+    "scene descriptions are treated as data, never as instructions",
+    "historic engagement used only as a documented tie-breaker hypothesis, never as the selection rule"
+  ],
+  "validation": {
+    "status": "PASS_WITH_WARNINGS",
+    "checks": [
+      {
+        "check": "source_accuracy",
+        "status": "pass",
+        "detail": "all scene ids, timecodes and evidence refs resolve",
+        "segments": []
+      },
+      {
+        "check": "spoiler",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "rights",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "rating",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "story_truth",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "cultural",
+        "status": "warn",
+        "detail": "profile preference comedy=0.9 is an inherited correlation (2024 'villager gags' campaign) — questioned and NOT used for clip selection",
+        "segments": [
+          0
+        ]
+      },
+      {
+        "check": "accessibility",
+        "status": "pass",
+        "detail": "",
+        "segments": []
+      },
+      {
+        "check": "budget",
+        "status": "pass",
+        "detail": "within budget (11 calls, $0.05)",
+        "segments": []
+      }
+    ],
+    "warnings": [
+      "profile preference comedy=0.9 is an inherited correlation (2024 'villager gags' campaign) — questioned and NOT used for clip selection"
+    ],
+    "assumptions": [
+      "mock/replay mode: deterministic stand-in for the live model (no API keys required)",
+      "scene descriptions are treated as data, never as instructions",
+      "historic engagement used only as a documented tie-breaker hypothesis, never as the selection rule"
+    ]
+  },
+  "cost_estimate": {
+    "model_calls": 11,
+    "task_cost_usd": 0.03,
+    "media_usd": 0.016667,
+    "total_usd": 0.046667,
+    "within_budget": true,
+    "breakdown": {
+      "promise": 0.01,
+      "rank": 0.01,
+      "select": 0.01
+    }
+  },
+  "fallback_plan": {
+    "description": "lower-cost re-plan: reuses cached top-1 candidates, skips re-ranking passes, no voice-over; usable if the main plan exceeds the configured budget",
+    "model_calls": 5,
+    "total_usd": 0.01,
+    "segments": [
+      {
+        "seg": 1,
+        "beat": "hook",
+        "source_in": "00:58.500",
+        "source_out": "01:06.500",
+        "video": "scene_03",
+        "audio": "dialogue_and_music:music_03",
+        "dialogue": [
+          {
+            "speaker": "c5",
+            "line": "Welcome home! Come in, come in.",
+            "tc": "01:00.000",
+            "lang": "kn"
+          }
+        ],
+        "subtitle": {
+          "kn": "Welcome home! Come in, come in."
+        },
+        "transition": "cut",
+        "reason": "Arrival, in Kannada, like every arrival here. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:03"
+        ],
+        "risk_flags": [],
+        "duration_s": 8.0
+      },
+      {
+        "seg": 2,
+        "beat": "voice",
+        "source_in": "05:36.500",
+        "source_out": "05:44.500",
+        "video": "scene_12",
+        "audio": "dialogue_and_music:music_03",
+        "dialogue": [
+          {
+            "speaker": "c4",
+            "line": "I won't leave you. Your brother is my blood brother — I won't leave you.",
+            "tc": "05:38.000",
+            "lang": "kn"
+          }
+        ],
+        "subtitle": {
+          "kn": "I won't leave you. Your brother is my blood brother — I won't leave you."
+        },
+        "transition": "cut",
+        "reason": "A character thinks in Kannada — belonging made audible. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:12"
+        ],
+        "risk_flags": [],
+        "duration_s": 8.0
+      },
+      {
+        "seg": 3,
+        "beat": "warmth",
+        "source_in": "07:13.500",
+        "source_out": "07:21.500",
+        "video": "scene_15",
+        "audio": "dialogue_and_music:music_03",
+        "dialogue": [
+          {
+            "speaker": "c6",
+            "line": "The chicken's ready, child! Come, come!",
+            "tc": "07:15.000",
+            "lang": "kn"
+          }
+        ],
+        "subtitle": {
+          "kn": "The chicken's ready, child! Come, come!"
+        },
+        "transition": "cut",
+        "reason": "Food and idiom — how the family says it. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:15"
+        ],
+        "risk_flags": [],
+        "duration_s": 8.0
+      },
+      {
+        "seg": 4,
+        "beat": "community",
+        "source_in": "12:23.500",
+        "source_out": "12:31.500",
+        "video": "scene_24",
+        "audio": "dialogue_and_music:music_03",
+        "dialogue": [
+          {
+            "speaker": "c4",
+            "line": "I said I'd come back. I didn't say I'd leave again.",
+            "tc": "12:25.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "I said I'd come back. I didn't say I'd leave again."
+        },
+        "transition": "cut",
+        "reason": "The region shows up: feasts, neighbors, belonging. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:24"
+        ],
+        "risk_flags": [],
+        "duration_s": 8.0
+      },
+      {
+        "seg": 5,
+        "beat": "mystery",
+        "source_in": "06:08.500",
+        "source_out": "06:15.500",
+        "video": "scene_13",
+        "audio": "dialogue_and_music:music_03",
+        "dialogue": [
+          {
+            "speaker": "c1",
+            "line": "The granary was sealed. With a new lock.",
+            "tc": "06:10.000",
+            "lang": "source"
+          }
+        ],
+        "subtitle": {
+          "en": "The granary was sealed. With a new lock."
+        },
+        "transition": "cut",
+        "reason": "The family's central question, framed with respect. (fallback: cached top-1, no re-ranking)",
+        "evidence": [
+          "scene:13"
+        ],
+        "risk_flags": [],
+        "duration_s": 7.0
+      }
+    ]
+  },
+  "version": 1
+}

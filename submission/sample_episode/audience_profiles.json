@@ -1,0 +1,29 @@
+[
+  {
+    "id": "family",
+    "name": "Family viewers",
+    "age_range": [8, 45],
+    "goals": ["Communicate warmth, stakes and broad entertainment value"],
+    "care": "Follow the strictest rating rules; avoid frightening or suggestive context",
+    "preferences": {"warmth": 0.8, "nostalgia": 0.7, "mystery": 0.4, "conflict": 0.3, "grief": 0.3},
+    "notes": "Broad audience; every frame must pass family rating."
+  },
+  {
+    "id": "ya",
+    "name": "Young adult viewers",
+    "age_range": [18, 30],
+    "goals": ["Highlight pace, humour, identity and character conflict"],
+    "care": "Do not use misleading intensity or reveal the central twist",
+    "preferences": {"conflict": 0.7, "humor": 0.6, "identity": 0.6, "pace": 0.6, "mystery": 0.4},
+    "notes": ""
+  },
+  {
+    "id": "dialect",
+    "name": "Dialect-region viewers (Kannada belt)",
+    "age_range": [25, 60],
+    "goals": ["Show that the release understands their language and cultural context"],
+    "care": "Do not reduce the audience to stereotypes or treat dialect as a comic device",
+    "preferences": {"dialect_familiarity": 0.8, "community": 0.7, "warmth": 0.6, "comedy": 0.9},
+    "notes": "comedy=0.9 is inherited from a 2024 campaign that measured 'funny' as 'villager gags'; treat as an unverified correlation, not a preference."
+  }
+]

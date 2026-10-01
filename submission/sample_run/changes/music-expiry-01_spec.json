@@ -1,0 +1,7 @@
+{
+  "change_id": "music-expiry-01",
+  "type": "contract_expired",
+  "ref": "music-02",
+  "payload": {},
+  "description": "Music rights for 'Distant Drums' (contract music-02) expire after the first trailer plan is created"
+}

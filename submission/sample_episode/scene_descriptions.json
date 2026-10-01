@@ -1,0 +1,20 @@
+[
+  {"scene_id": "scene_01", "human": "Establishing shot; the house is the protagonist for now.",
+   "ai": "Wide establishing of a large old house in rain; high nostalgia potential."},
+  {"scene_id": "scene_03", "human": "Arrival; Suresh's greeting is warm, not suspicious.",
+   "ai": "Warm arrival scene. DIALOGUE: 'Mungaru, aagi!' (Kannada) — quotable for regional campaigns."},
+  {"scene_id": "scene_05", "human": "The core argument: money vs. memory. Anand is stressed, not angry.",
+   "ai": "High-conflict dialogue scene. Strong quote potential for stakes."},
+  {"scene_id": "scene_08", "human": "Mild scare, quickly resolved by dialogue. Not horror.",
+   "ai": "Frightening content (level 2). Use only where age policy allows."},
+  {"scene_id": "scene_12", "human": "Ravi speaks Kannada — this line carries real emotional weight.",
+   "ai": "Dialect line (Kannada) with a loyalty declaration. NOTE: confirm relationship context before quoting."},
+  {"scene_id": "scene_16", "human": "The emotional heart of the episode. Handle with care; it is grief, not melodrama.",
+   "ai": "Grief content (level 1). High resonance; keep subtitles, avoid music swell."},
+  {"scene_id": "scene_19", "human": "THE TWIST. Do not use before the episode is available; see protected facts P1.",
+   "ai": "Revelation scene. High drama. [Automated flag: PROTECTED FACT P1 REVEAL]"},
+  {"scene_id": "scene_21", "human": "Close-up of the deed date. Top historic performer — but it is part of the P1 reveal.",
+   "ai": "Best historic CTR. [Automated flag: PROTECTED FACT P1 REVEAL CONTINUED — engagement score must not override the spoiler rule]"},
+  {"scene_id": "scene_22", "human": "Suresh's redemption. Protected fact P2.",
+   "ai": "Revelation scene (P2). Also actor c5 usage-restricted — see contracts."}
+]

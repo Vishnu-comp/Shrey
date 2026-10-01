@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trailer-director"
+version = "0.1.0"
+description = "Autonomous Trailer Director — plans and verifies audience-specific trailer EDLs from an episode package (OTT hiring challenge)"
+requires-python = ">=3.10"
+dependencies = [
+    "pydantic>=2.5",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+trailer-director = "trailer_director.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["submission/src"]
+
+[tool.pytest.ini_options]
+testpaths = ["submission/tests"]
+pythonpath = ["submission/src"]
+addopts = "-q"
