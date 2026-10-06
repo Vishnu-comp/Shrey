@@ -1,72 +1,27 @@
-import { motion } from 'framer-motion'
-import { ChevronRight } from 'lucide-react'
-import { IMAGES } from '../../constants/images'
+import { GENJUTSU } from '../../constants/images'
+import Masonry from '../Masonry'
+import { Layers } from 'lucide-react'
 
 export default function GenjutsuShowcase() {
   return (
-    <section className="py-12 px-4">
-      <div className="max-w-[1400px] mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="mb-8"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            Higgsfield Genjutsu
-          </h2>
-          <p className="text-text-secondary text-lg max-w-3xl mb-6">
-            Reality Manipulation — transfer motion into new scenes, or swap details while everything else stays as filmed.
-          </p>
-          <div className="flex gap-4">
-            <button className="glow-btn text-sm px-6 py-2">Start generating</button>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-gold-2 hover:text-gold-2/80 font-semibold transition-colors"
-            >
-              Learn more <ChevronRight size={18} />
-            </a>
+    <section className="px-4 pt-8">
+      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-black p-6">
+        <span className="inline-flex items-center gap-2 rounded-full border border-lime/30 bg-lime/15 px-3 py-1.5 text-sm font-semibold text-lime"><Layers size={14} />New model</span>
+        <div className="mt-6 flex flex-wrap items-end justify-between gap-4">
+          <div className="max-w-[620px]">
+            <h2 className="text-[34px] font-extrabold uppercase leading-none tracking-tight text-lime">Higgsfield Genjutsu</h2>
+            <p className="mt-4 text-base leading-6 text-muted">Reality Manipulation — transfer motion into new scenes, or swap details while everything else stays as filmed.</p>
           </div>
-        </motion.div>
-
-        {/* Dense Grid */}
-        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 mb-8">
-          {IMAGES.genjutsu.map((img, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.02 }}
-              className="aspect-square rounded-lg overflow-hidden cursor-pointer group"
-            >
-              <img
-                src={img}
-                alt={`Genjutsu ${i + 1}`}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-              />
-            </motion.div>
-          ))}
+          <div className="flex gap-3">
+            <a href="#" className="btn-lime">Start generating</a>
+            <a href="#" className="btn-white">Learn more</a>
+          </div>
         </div>
-
-        {/* Second block */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <p className="text-text-secondary text-lg mb-4">
-            Take the motion and recast it with your characters, locations, and products, or swap specific elements while keeping the rest untouched.
-          </p>
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 text-gold-2 hover:text-gold-2/80 font-semibold transition-colors"
-          >
-            View all presets <ChevronRight size={18} />
-          </a>
-        </motion.div>
+        <div className="relative mt-8 max-h-[640px] overflow-hidden">
+          <Masonry items={GENJUTSU} cols={5} gap={8} />
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[260px] bg-gradient-to-t from-black via-black/85 to-transparent" />
+          <a href="#" className="btn-ghost-lime absolute bottom-3 left-1/2 -translate-x-1/2">View all presets</a>
+        </div>
       </div>
     </section>
   )
