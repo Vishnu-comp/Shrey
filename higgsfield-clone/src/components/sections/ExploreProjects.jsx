@@ -1,73 +1,26 @@
-import { motion } from 'framer-motion'
-import { ChevronRight, Globe } from 'lucide-react'
-import { IMAGES } from '../../constants/images'
+import { PROJECTS } from '../../constants/images'
+import SectionHead from '../SectionHead'
+import { Arrow } from '../Icons'
 
 export default function ExploreProjects() {
   return (
-    <section className="py-12 px-4">
-      <div className="max-w-[1400px] mx-auto">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-10"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
-            Explore the inside of every project
-          </h2>
-          <p className="text-text-secondary text-lg">
-            See all prompts, assets, and how each project was created
-          </p>
-        </motion.div>
-
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          {IMAGES.projects.map((project, i) => (
-            <motion.a
-              key={i}
-              href="#"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="card-hover group rounded-xl overflow-hidden bg-dark-card border border-white/5 hover:border-gold-1/30"
-            >
-              <div className="aspect-video relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute bottom-2 right-2 bg-black/60 backdrop-blur-sm rounded-md px-2 py-1 flex items-center gap-1">
-                  <Globe size={12} className="text-gold-2" />
-                  <span className="text-white text-xs">Public</span>
-                </div>
+    <section className="px-4 pt-10">
+      <SectionHead title="Explore the inside of every project" sub="See all prompts, assets, and how each project was created" />
+      <div className="relative mt-4 max-h-[448px] overflow-hidden">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {PROJECTS.map((p) => (
+            <a key={p.title} href="#" className="block rounded-2xl border border-white/5 bg-surface-card p-1">
+              <img src={p.image} alt="" loading="lazy" className="aspect-[288/164] w-full rounded-xl object-cover" />
+              <div className="flex items-center gap-2 px-2 py-3 text-sm">
+                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-lime text-[#1a1a1a] text-xs font-extrabold">H</span>
+                <span className="min-w-0 truncate font-semibold">{p.title}<span className="font-normal text-muted"> by Higgsfield Studio</span></span>
+                <span className="ml-auto shrink-0 rounded-lg bg-white/10 px-2 py-1 text-xs font-medium">Public</span>
               </div>
-              <div className="p-4">
-                <h4 className="text-white font-semibold mb-2 truncate group-hover:text-gold-2 transition-colors">
-                  {project.title}
-                </h4>
-                <div className="flex items-center gap-2">
-                  <div className="w-6 h-6 rounded-full bg-gradient-to-br from-gold-1 to-gold-2 flex items-center justify-center">
-                    <span className="text-black text-xs font-bold">H</span>
-                  </div>
-                  <span className="text-text-secondary text-sm">by {project.creator}</span>
-                </div>
-              </div>
-            </motion.a>
+            </a>
           ))}
         </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <a
-            href="#"
-            className="inline-flex items-center gap-2 text-gold-2 hover:text-gold-2/80 font-semibold transition-colors"
-          >
-            Explore community <ChevronRight size={18} />
-          </a>
-        </div>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-surface to-transparent" />
+        <a href="#" className="btn-ghost-lime strong absolute bottom-3 left-1/2 -translate-x-1/2 backdrop-blur">Explore community<Arrow /></a>
       </div>
     </section>
   )
