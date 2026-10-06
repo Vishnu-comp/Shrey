@@ -1,68 +1,49 @@
+const COLS = [
+  [['Create', ['AI Video', 'AI Image', 'Edit Image', 'Inpaint', 'Upscale', 'Sora 2 Upscale', 'Mixed Media', 'AI Face Swap', 'AI Influencer', 'Apps']]],
+  [['Video Models', ['Seedance 2.5', 'Seedance 2.0', 'Kling 3.0', 'Sora 2 Introduction', 'Veo 3.1 Introduction', 'WAN 2.6', 'Grok Imagine 1.5', 'Gemini Omni Flash']], ['Image Models', ['Nano Banana', 'Flux 2', 'Seedream 5', 'GPT Image 2']]],
+  [['Studios', ['Cinema Studio', 'Marketing Studio', 'Lipsync Studio', 'Photodump Studio', 'Fashion Factory', 'Higgsfield Popcorn', 'Higgsfield Canvas']], ['Soul', ['Soul 2.0', 'Soul ID Character', 'Soul Cinema']]],
+  [['Platform', ['Supercomputer', 'MCP/CLI', 'API', 'Collab', 'Games', 'Reference Extension']], ['Resources', ['Blog', 'Creator Hub', 'Help Center', 'Academy', 'Prompt Guide']]],
+  [['Company', ['About', 'Trust', 'Enterprise', 'Team', 'Pricing', 'Careers', 'Contact']], ['Community', ['Community', 'Contests', 'Creative Partners']]],
+]
+
 export default function Footer() {
   return (
-    <footer className="bg-black border-t border-white/5 py-16 px-4">
-      <div className="max-w-[1400px] mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          {/* Product */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Product</h4>
-            <ul className="space-y-2">
-              {['Video', 'Image', 'Upscale', 'Edit Image', 'Visual Effects'].map(item => (
-                <li key={item}>
-                  <a href="#" className="text-text-secondary text-sm hover:text-white transition-colors">{item}</a>
-                </li>
-              ))}
-            </ul>
+    <>
+      <footer className="bg-lime text-[#131517]">
+        <div className="mx-auto grid max-w-[1265px] gap-10 px-4 pb-16 pt-9 lg:grid-cols-[432px_1fr]">
+          <h2 className="text-[40px] font-extrabold uppercase leading-[48px] tracking-tight">AI-native<br />creative suite</h2>
+          <div className="grid grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5">
+            {COLS.map((col, i) => (
+              <div key={i} className="space-y-8">
+                {col.map(([head, links]) => (
+                  <div key={head}>
+                    <h3 className="mb-2 text-base font-medium text-[#131517]/50">{head}</h3>
+                    <ul className="space-y-0">
+                      {links.map((l) => (
+                        <li key={l}><a href="#" className="block py-[7px] text-base font-medium leading-[22px] hover:underline">{l}</a></li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
-
-          {/* Models */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Models</h4>
-            <ul className="space-y-2">
-              {['Seedance 2.5', 'Genjutsu', 'Soul', 'Cinema Studio', 'Supercomputer'].map(item => (
-                <li key={item}>
-                  <a href="#" className="text-text-secondary text-sm hover:text-white transition-colors">{item}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Resources</h4>
-            <ul className="space-y-2">
-              {['Community', 'Blog', 'Pricing', 'MCP', 'Canvas'].map(item => (
-                <li key={item}>
-                  <a href="#" className="text-text-secondary text-sm hover:text-white transition-colors">{item}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h4 className="text-white font-semibold mb-4">Company</h4>
-            <ul className="space-y-2">
-              {['About', 'Careers', 'Terms', 'Privacy', 'Contact'].map(item => (
-                <li key={item}>
-                  <a href="#" className="text-text-secondary text-sm hover:text-white transition-colors">{item}</a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-white/5">
-          <div className="flex items-center gap-3 mb-4 md:mb-0">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-gold-1 to-gold-2 flex items-center justify-center">
-              <span className="text-black font-bold text-sm">H</span>
+          <div className="lg:col-start-1">
+            <p className="text-base font-medium">535 Mission St, 14th floor, San Francisco, CA, 94105</p>
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-base font-semibold">
+              {['X / Twitter', 'Youtube', 'LinkedIn', 'Tiktok', 'Discord'].map((s) => <a key={s} href="#" className="hover:underline">{s}</a>)}
             </div>
-            <span className="text-white font-semibold">Higgsfield AI</span>
           </div>
-          <p className="text-text-secondary text-sm">© 2025 Higgsfield AI. All rights reserved.</p>
         </div>
-      </div>
-    </footer>
+      </footer>
+      <footer className="bg-surface">
+        <div className="mx-auto flex max-w-[1265px] flex-wrap items-center justify-between gap-4 px-4 py-6 text-sm text-white/90">
+          <span>© 2026 Higgsfield, Inc. All rights reserved.</span>
+          <div className="flex flex-wrap items-center gap-6">
+            <span>English</span><a href="#">Help center</a><a href="#">Cookie Notice</a><a href="#">Cookie Settings</a><a href="#">Terms</a><a href="#">Privacy</a>
+          </div>
+        </div>
+      </footer>
+    </>
   )
 }
