@@ -1,63 +1,41 @@
-import { motion } from 'framer-motion'
-import { Zap } from 'lucide-react'
-import { IMAGES } from '../../constants/images'
+import { DOTS } from '../../constants/images'
+import { Sparkles } from 'lucide-react'
 
-const dots = [
-  { name: 'Character Creator', icon: IMAGES.dots.characterCreator },
-  { name: 'Cinematic Director', icon: IMAGES.dots.cinematicDirector },
-  { name: 'Content Lead', icon: IMAGES.dots.contentLead },
-  { name: 'Motion Designer', icon: IMAGES.dots.motionDesigner },
-]
+const Tag = ({ children, className }) => (
+  <span className={`absolute hidden md:block rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur ${className}`}>{children}</span>
+)
+const Dot = ({ src, size, className }) => (
+  <img src={src} alt="" width={size} height={size} className={`absolute hidden md:block floaty ${className}`} />
+)
+const Cursor = ({ className }) => (
+  <svg className={`absolute hidden md:block ${className}`} width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.6" strokeLinejoin="round"><path d="M3 11 21 3l-8 18-2-8z" /></svg>
+)
 
 export default function ChatGPTDots() {
   return (
-    <section className="py-12 px-4">
-      <div className="max-w-[1400px] mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="rounded-2xl bg-dark-card border border-white/5 p-8 md:p-12"
-        >
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="flex-1">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                Use ChatGPT{' '}
-                <img
-                  src={IMAGES.dots.dotWhite}
-                  alt="Dots"
-                  className="inline-block w-8 h-8 mx-1"
-                />{' '}
-                <span className="gradient-text">with Higgsfield MCP</span>
-              </h2>
-              <p className="text-text-secondary text-lg mb-6">
-                Plan and make a creative project step by step with Higgsfield Dots in ChatGPT
-              </p>
-              <button className="glow-btn inline-flex items-center gap-2">
-                <Zap size={18} />
-                Connect Higgsfield
-              </button>
-            </div>
-
-            {/* Dots Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {dots.map((dot, i) => (
-                <motion.div
-                  key={dot.name}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="flex items-center gap-3 bg-black/40 rounded-lg p-4 border border-white/5"
-                >
-                  <img src={dot.icon} alt={dot.name} className="w-10 h-10 rounded-full" />
-                  <span className="text-white text-sm font-medium">{dot.name}</span>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
-      </div>
+    <section className="px-4 pt-6">
+      <a href="#" className="relative block h-[400px] overflow-hidden rounded-3xl border border-white/10 bg-[#0f0f0f] text-center">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,255,.08),transparent_60%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-[radial-gradient(ellipse_at_50%_100%,rgba(255,255,255,.12),transparent_70%)]" />
+        <div className="relative mx-auto flex h-full max-w-[760px] flex-col items-center justify-center px-4">
+          <h2 className="whitespace-nowrap text-[34px] md:text-[48px] font-extrabold leading-[1.05] uppercase tracking-tight">
+            Use ChatGPT <img src={DOTS.white} alt="" className="mx-1 inline-block h-[56px] w-[56px] align-middle" /> Dots<br />with Higgsfield MCP
+          </h2>
+          <p className="mt-4 max-w-[330px] text-[15px] leading-snug text-white/50">Plan and make a creative project step by step with Higgsfield Dots in ChatGPT</p>
+          <span className="btn-lime mt-6 !h-11 !text-[15px]"><Sparkles size={16} />Connect Higgsfield</span>
+        </div>
+        <Dot src={DOTS.director} size={67} className="left-[200px] top-[85px]" />
+        <Dot src={DOTS.character} size={60} className="left-[310px] top-[155px]" />
+        <Dot src={DOTS.lead} size={67} className="right-[230px] top-[190px]" />
+        <Dot src={DOTS.motion} size={80} className="right-[240px] top-[10px]" />
+        <Tag className="left-[168px] top-[70px]">Cinematic Director</Tag>
+        <Tag className="right-[240px] top-[90px]">Motion Designer</Tag>
+        <Tag className="left-[283px] top-[275px]">Character Creator</Tag>
+        <Tag className="right-[230px] top-[255px]">Content Lead</Tag>
+        <Cursor className="left-[270px] top-[135px]" />
+        <Cursor className="left-[350px] top-[190px]" />
+        <Cursor className="right-[320px] top-[160px]" />
+      </a>
     </section>
   )
 }
