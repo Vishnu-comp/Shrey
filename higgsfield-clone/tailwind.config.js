@@ -1,26 +1,15 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        dark: {
-          card: '#141414',
-          border: '#1f1f1f',
-        },
-        gold: {
-          1: '#8E733A',
-          2: '#EAD9A3',
-          3: '#9F8754',
-        },
-        'text-secondary': '#9ca3af',
+        lime: { DEFAULT: '#d1fe17' },
+        surface: { DEFAULT: '#0f1113', card: '#1c1e20' },
+        muted: '#898a8b',
+        gold: { 1: '#8E733A', 2: '#EAD9A3', 3: '#9F8754' },
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-      },
+      fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'] },
     },
   },
   plugins: [],
