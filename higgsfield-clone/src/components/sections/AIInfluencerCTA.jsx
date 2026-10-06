@@ -1,60 +1,24 @@
-import { motion } from 'framer-motion'
-import { IMAGES } from '../../constants/images'
+import { INFLUENCER } from '../../constants/images'
+import { Gift } from 'lucide-react'
 
 export default function AIInfluencerCTA() {
   return (
-    <section className="py-8 px-4">
-      <div className="max-w-[1400px] mx-auto">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-purple-900/30 via-pink-900/20 to-purple-900/30 border border-white/5"
-        >
-          <div className="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16">
-            {/* Left Content */}
-            <div className="flex-1 text-center md:text-left mb-8 md:mb-0">
-              <span className="inline-block text-xs font-semibold text-gold-2 uppercase tracking-wider mb-3">
-                Try Free
-              </span>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">
-                AI Influencer
-              </h2>
-              <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold gradient-text mb-4">
-                Build your next hype machine
-              </h3>
-              <p className="text-text-secondary text-lg mb-6">
-                Pick the look. Add motion. Build hype.
-              </p>
-              <button className="glow-btn text-base px-8 py-3">
-                Create your own AI Influencer
-              </button>
-            </div>
-
-            {/* Right Images */}
-            <div className="flex items-center gap-4">
-              <motion.img
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-                src={IMAGES.aiInfluencer.portraitLeft}
-                alt="AI Influencer"
-                className="w-32 md:w-40 h-48 md:h-64 rounded-xl object-cover"
-              />
-              <motion.img
-                initial={{ x: -50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3 }}
-                src={IMAGES.aiInfluencer.portraitRight}
-                alt="AI Influencer"
-                className="w-32 md:w-40 h-48 md:h-64 rounded-xl object-cover"
-              />
-            </div>
-          </div>
-        </motion.div>
-      </div>
+    <section className="px-4 pt-6">
+      <a href="#" className="relative block h-[400px] overflow-hidden rounded-3xl border border-white/10 bg-black text-center">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_0%,rgba(255,255,255,.22),rgba(0,0,0,0)_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_55%,rgba(60,60,60,.45),rgba(0,0,0,0)_70%)]" />
+        <img src={INFLUENCER.left} alt="" className="absolute bottom-0 left-6 hidden h-[336px] w-auto md:block" />
+        <img src={INFLUENCER.right} alt="" className="absolute bottom-0 right-0 hidden h-[316px] w-auto md:block" />
+        <div className="relative mx-auto flex h-full max-w-[580px] flex-col items-center px-4 pt-8">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-lime/20 px-3 py-1 text-sm font-semibold text-lime backdrop-blur"><Gift size={14} />Try Free</span>
+          <p className="mt-9 text-base font-bold uppercase">AI Influencer</p>
+          <h2 className="mt-1 text-[48px] md:text-[56px] leading-[1.02] font-extrabold uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-b from-white to-[#8a8a8a]">
+            Build your next<br />hype machine
+          </h2>
+          <p className="mt-3 text-lg text-white/50">Pick the look. Add motion. Build hype.</p>
+          <span className="btn-lime mt-auto mb-8 !h-10 !text-[15px]">Create your own AI Influencer</span>
+        </div>
+      </a>
     </section>
   )
 }
