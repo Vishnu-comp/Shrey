@@ -1,149 +1,130 @@
-// All images from the live Higgsfield.ai homepage
-export const IMAGES = {
-  // Product Carousel
-  carousel: {
-    adsStudio: 'https://static-public-media.higgsfield.ai/cards/f161537e-5de5-4f76-9af3-86c64edd707f.webp',
-  },
-
-  // Promo Banner
-  promo: {
-    seedancePoster: 'https://static.higgsfield.ai/public/promotions/seedance-2-5-sale-hero-poster.jpg',
-  },
-
-  // Model Cards
-  modelCards: {
-    seedanceLogo: 'https://static.higgsfield.ai/explore/image-generate-block/seedance-logo.png',
-    cinemaStudio: 'https://static.higgsfield.ai/explore/image-generate-block/cinema-studio.png',
-    supercomputerIcon: 'https://static.higgsfield.ai/explore/image-generate-block/supercomputer-card-icon.svg',
-  },
-
-  // AI Influencer
-  aiInfluencer: {
-    portraitLeft: 'https://static.higgsfield.ai/home/ai-influencer-banner/v1/portrait-left-2.webp',
-    portraitRight: 'https://static.higgsfield.ai/home/ai-influencer-banner/v1/portrait-right.webp',
-  },
-
-  // Film Festival
-  festival: {
-    trophyLeft: 'trophy-left',
-    trophyRight: 'trophy-right',
-  },
-
-  // VFX Gallery
-  vfx: {
-    incline: 'https://cdn.higgsfield.ai/viral_hub/30142c8a-46ee-4930-aca3-6fa5321dd84a.webp',
-    actNatural: 'https://cdn.higgsfield.ai/viral_hub/17cc1333-9822-442c-adaa-d208c59e3e01.webp',
-    lacewalker: 'https://cdn.higgsfield.ai/viral_hub/ef3dfc4c-a4c2-44a0-af27-d005bd1c319d.webp',
-    burningMan: 'https://cdn.higgsfield.ai/viral_hub/a1560137-597c-455a-be9e-9622cccf76a3.webp',
-    melting: 'https://cdn.higgsfield.ai/viral_hub/6ecca888-1780-46ae-a86d-a05b69b2fe34.webp',
-    worldMorphing: 'https://cdn.higgsfield.ai/viral_hub/0abb112e-068d-45e4-acea-9c8c44a16781.webp',
-    highFlip: 'https://cdn.higgsfield.ai/viral_hub/95cd0d73-4f3c-40d1-ac0b-c8668a99440b.webp',
-    streetColossus: 'https://cdn.higgsfield.ai/viral_hub/5e67ff0a-60f7-4c0a-8ace-18c9bf3e5426.webp',
-    selfception: 'https://cdn.higgsfield.ai/viral_hub/495d9e85-0417-47d9-9e0a-722ace805852.webp',
-    cutout: 'https://cdn.higgsfield.ai/viral_hub/b5c90864-c3c5-4b14-87a0-3739250fd00b.webp',
-    floatingFall: 'https://cdn.higgsfield.ai/viral_hub/151664fa-7f7f-43d6-80fa-4683104a3c02.webp',
-    eyesIn: 'https://cdn.higgsfield.ai/viral_hub/5354ce11-c68c-45a0-8a97-5aab94f52833.webp',
-    wildRide: 'https://cdn.higgsfield.ai/viral_hub/99aa3365-5ae0-4616-9722-ce0dc087607d.webp',
-    smashAndGrab: 'https://cdn.higgsfield.ai/viral_hub/4a2315f6-57e1-4378-82a5-598ddbbfbbcb.webp',
-    studioSlide: 'https://cdn.higgsfield.ai/viral_hub/05201733-c72f-43ed-8393-8b8cea28b8ce.webp',
-  },
-
-  // Genjutsu thumbnails
-  genjutsu: [
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/54b6f52b-08b2-5acf-9557-2e599560acd8.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/067a9f92-94b2-5e63-accf-2c57fe1a0cdf.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/80918ab3-d0cf-5c86-af99-29d53184edf0.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/4a716a67-a71a-4496-9df6-d6d337b996d1.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/c045b52b-ab93-5d96-8e2b-72115697cb50.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/f0ad452c-2254-54cb-932e-d85d0b06dca7.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/24daa737-06d4-530d-b2ff-18f0eeb2c289.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/167113f5-32ca-5c5f-ae3f-7f8e7599e964.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/06aaeffd-33c0-5add-a61c-eacf299154fa.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/56475b81-bfc4-5cf1-ace4-902c5c0797e3.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/9650072f-7ed8-5c91-bc2f-edc3a30ba02e.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/08edcef0-2205-5490-a4e3-014f32e77587.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/a3177c9f-c068-54bb-96b2-abc85054ef9b.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/03252833-d6bb-5a61-95df-a199d9fe2a5d.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/e1db4f4b-3101-5151-91bf-a06be7a8a316.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/f32779dd-b4be-5f1d-ac1f-71f59b92d476.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/1bc47dfd-2af0-509b-bd76-3896ec07bf3d.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/d34e684b-0ed7-50fa-befb-d550e7a43881.webp',
-    'https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/33ab59ac-cee3-57eb-95ce-754de9f021.webp',
-  ],
-
-  // Explore Projects
-  projects: [
-    {
-      image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_3GNcyaSCltezE7ot4WtRdn0jfo0%2F821f8180-f5de-4a1b-b827-57b34a7cbc4d.jpg&w=1920&q=85',
-      title: 'If you stop loving me, I\'ll die',
-      creator: 'Higgsfield Studio',
-    },
-    {
-      image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_3GNcyaSCltezE7ot4WtRdn0jfo0%2F75d860f8-6dde-45d6-ae81-756ddbfe563e.jpg&w=1920&q=85',
-      title: 'Cully Hill Boys',
-      creator: 'Higgsfield Studio',
-    },
-    {
-      image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_3GNcyaSCltezE7ot4WtRdn0jfo0%2Ff6bf4ce5-2a41-45cb-a099-12bdc1e117c1.jpg&w=1920&q=85',
-      title: 'Red Flag',
-      creator: 'Higgsfield Studio',
-    },
-    {
-      image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_3GNcyaSCltezE7ot4WtRdn0jfo0%2Ff3ca6ccc-a45c-4111-a66e-ecb2e5d38dba.jpg&w=1920&q=85',
-      title: 'Kok Boru',
-      creator: 'Higgsfield Studio',
-    },
-    {
-      image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_3GNcyaSCltezE7ot4WtRdn0jfo0%2F07c550cd-d621-46a1-8cb1-420986027ac9.jpg&w=1920&q=85',
-      title: 'Adiliada',
-      creator: 'Higgsfield Studio',
-    },
-    {
-      image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_3GNcyaSCltezE7ot4WtRdn0jfo0%2F6984c17e-8f23-4a86-896c-ff0d3be920ca.jpg&w=1920&q=85',
-      title: 'ONEIRIC',
-      creator: 'Higgsfield Studio',
-    },
-    {
-      image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_3GNcyaSCltezE7ot4WtRdn0jfo0%2F9655238c-398d-4403-bc7d-68e3b43238cf.jpg&w=1920&q=85',
-      title: 'ZEPHYR: Special',
-      creator: 'Higgsfield Studio',
-    },
-    {
-      image: 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd2ol7oe51mr4n9.cloudfront.net%2Fuser_2v5txepAmNYZwyzml1nIizlWURE%2Fdf7107b3-1dd6-438a-a168-ed382e2ad901.png&w=1920&q=85',
-      title: 'HELL GRIND',
-      creator: 'Higgsfield Studio',
-    },
-  ],
-
-  // Supercomputer banner
-  supercomputer: {
-    bg: 'https://static.higgsfield.ai/spc-banner/bg-spc-banner.png',
-    creative: 'https://static.higgsfield.ai/spc-banner/spc-banner-creative.png',
-    visualizing: 'https://static.higgsfield.ai/spc-banner/spc-banner-visualizing.png',
-    marketing: 'https://static.higgsfield.ai/spc-banner/spc-banner-marketing.png',
-    production: 'https://static.higgsfield.ai/spc-banner/spc-banner-production.png',
-    logo: 'https://static.higgsfield.ai/spc-banner/spc-banner-logo.png',
-  },
-
-  // Canvas
-  canvas: {
-    mobile: 'https://static.higgsfield.ai/canvas-banner-mobile.webp',
-    desktop: 'https://static.higgsfield.ai/canvas-banner-desktop-new.webp',
-  },
-
-  // Photodump
-  photodump: {
-    mobile: 'https://static.higgsfield.ai/public/photodump/cta-mobile.png',
-    desktop: 'https://static.higgsfield.ai/public/photodump/cta-desktop.png',
-  },
-
-  // MCP Dots
-  dots: {
-    dotWhite: 'https://static.higgsfield.ai/mcp/dots/v2/dot-white.webp',
-    characterCreator: 'https://static.higgsfield.ai/mcp/dots/v2/dot-character-creator.webp',
-    cinematicDirector: 'https://static.higgsfield.ai/mcp/dots/v2/dot-cinematic-director.webp',
-    contentLead: 'https://static.higgsfield.ai/mcp/dots/v2/dot-content-lead.webp',
-    motionDesigner: 'https://static.higgsfield.ai/mcp/dots/v2/dot-motion-designer.webp',
-    cursor: 'https://static.higgsfield.ai/mcp/dots/v2/cursor.svg',
-  },
+// Media URLs observed on the public higgsfield.ai homepage (hotlinked, not copied into the repo)
+export const HERO_CARDS = [
+ {
+  "video": "https://static-public-media.higgsfield.ai/cards/6e0b1c30-6596-4f32-9452-c4b9f8890329.mp4",
+  "poster": "",
+  "title": "HIGGSFIELD ADS STUDIO",
+  "sub": "Get your next winning static ads with less work"
+ },
+ {
+  "video": "https://static-public-media.higgsfield.ai/cards/426e4ec0-3f06-4bef-a2ae-ac7a2de4a6c1.mp4",
+  "poster": "",
+  "title": "AI INFLUENCER \u2014 VIRAL BY DESIGN",
+  "sub": "Your next viral creator starts now"
+ },
+ {
+  "video": "https://static-public-media.higgsfield.ai/cards/33cd35c5-e687-46cd-8fa5-2d097d4206dc.mp4",
+  "poster": "https://static-public-media.higgsfield.ai/cards/4e1b2b1f-918b-4583-95e7-2dc171071256.webp",
+  "title": "GENJUTSU RESTYLE",
+  "sub": "Keep the motion, change the world: restyle any video in one click"
+ },
+ {
+  "video": "https://static-public-media.higgsfield.ai/cards/3e852ebd-c1ac-43f5-a590-df550d5f4a34.mp4",
+  "poster": "https://static-public-media.higgsfield.ai/cards/e8fbcd7e-321b-405e-930b-0df88096c742.webp",
+  "title": "HIGGSFIELD EXTENSION IN CHATGPT",
+  "sub": "Your entire AI production studio, inside ChatGPT"
+ }
+]
+export const FEST_VIDEO = "https://static.higgsfield.ai/hf_20260919_230024_e1319c4d-ba86-4aba-a694-13f73addfb03.mp4"
+export const FEST_LOGO = "https://assets.higgsfield.ai/tanstack/assets/8838ef87-oCSd9ySZVrwe4vNI.svg"
+export const FEST_TILES = [
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_2vi8lJJuCtaqBPiyWMQuTmMCqcv/7d5a53be-5b3d-4676-ac51-53120bcb1117.png",
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_37ZTN7CzWJpsQXgBb20ZC5wizDo/3cec7531-ac4f-455a-b4dc-244b6929ae5e.png",
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_3HHoco5yVBrnJykveIPIqe1y4AP/35a6acb4-2e2e-46a6-bd4f-db622b57a38f.png",
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_2vOlZqHm9l70zjwiloUuTFoQts9/3a83321e-bfcf-46bd-8519-7c9ed8a52584.png",
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_3HaaTL5Ipv9mbnmREY8KioT6TWH/cca9fc2f-65a2-46bb-ae99-c0c9ec9b0dbd.png",
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_2vazcpIaHtTR6Zky17mP5qaAvdj/0ac256c9-f4da-4932-a6cb-4d876fd284fe.png",
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_2yvPAQhHPa3gTPOEPmB8Z2tWlet/30269fa0-1530-4536-bb28-148283cf7597.webp",
+ "https://d8j0ntlcm91z4.cloudfront.net/user_3BJS1I4NBcMrJCQ85pGl7IK3vWK/hf_20260828_175909_330764cc-eb0b-4028-bbca-e45ce5037641_min.webp",
+ "https://d8j0ntlcm91z4.cloudfront.net/user_3Gl5kZJgyusrPdzLtfZxpLcmYJi/hf_20260912_070349_86188b9f-57f5-4ff6-9a2c-43d841d77243_min.webp",
+ "https://d8j0ntlcm91z4.cloudfront.net/user_391c1veqSIPf2fiveRaYaLV2GxI/hf_20260822_173418_19f73675-b69e-4314-b3a1-f74802df1da2_min.webp",
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_2z48uxE2O5vQ9OjsGuyDZmbQkp5/6e676a9e-c2a3-4fdf-9c97-23f82c35b8c6.jpg",
+ "https://d2ol7oe51mr4n9.cloudfront.net/user_31T0v3IDGaklW7jp6QCqmGJecjF/6aa41d9e-d857-415e-9fbd-5e4c7445337e.png"
+]
+export const DOTS = {
+ "white": "https://static.higgsfield.ai/mcp/dots/v2/dot-white.webp",
+ "character": "https://static.higgsfield.ai/mcp/dots/v2/dot-character-creator.webp",
+ "director": "https://static.higgsfield.ai/mcp/dots/v2/dot-cinematic-director.webp",
+ "lead": "https://static.higgsfield.ai/mcp/dots/v2/dot-content-lead.webp",
+ "motion": "https://static.higgsfield.ai/mcp/dots/v2/dot-motion-designer.webp"
 }
+export const VFX = [
+ "https://cdn.higgsfield.ai/viral_hub/30142c8a-46ee-4930-aca3-6fa5321dd84a.webp",
+ "https://cdn.higgsfield.ai/viral_hub/17cc1333-9822-442c-adaa-d208c59e3e01.webp",
+ "https://cdn.higgsfield.ai/viral_hub/ef3dfc4c-a4c2-44a0-af27-d005bd1c319d.webp",
+ "https://cdn.higgsfield.ai/viral_hub/a1560137-597c-455a-be9e-9622cccf76a3.webp",
+ "https://cdn.higgsfield.ai/viral_hub/6ecca888-1780-46ae-a86d-a05b69b2fe34.webp",
+ "https://cdn.higgsfield.ai/viral_hub/0abb112e-068d-45e4-acea-9c8c44a16781.webp",
+ "https://cdn.higgsfield.ai/viral_hub/95cd0d73-4f3c-40d1-ac0b-c8668a99440b.webp",
+ "https://cdn.higgsfield.ai/viral_hub/5e67ff0a-60f7-4c0a-8ace-18c9bf3e5426.webp",
+ "https://cdn.higgsfield.ai/viral_hub/495d9e85-0417-47d9-9e0a-722ace805852.webp",
+ "https://cdn.higgsfield.ai/viral_hub/b5c90864-c3c5-4b14-87a0-3739250fd00b.webp",
+ "https://cdn.higgsfield.ai/viral_hub/151664fa-7f7f-43d6-80fa-4683104a3c02.webp",
+ "https://cdn.higgsfield.ai/viral_hub/5354ce11-c68c-45a0-8a97-5aab94f52833.webp",
+ "https://cdn.higgsfield.ai/viral_hub/99aa3365-5ae0-4616-9722-ce0dc087607d.webp",
+ "https://cdn.higgsfield.ai/viral_hub/4a2315f6-57e1-4378-82a5-598ddbbfbbcb.webp",
+ "https://cdn.higgsfield.ai/viral_hub/05201733-c72f-43ed-8393-8b8cea28b8ce.webp"
+]
+export const PROJECTS = [
+ {
+  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GNcyaSCltezE7ot4WtRdn0jfo0/821f8180-f5de-4a1b-b827-57b34a7cbc4d.jpg",
+  "title": "If you stop loving me, I'll die — I don't like dying, but for our love I'm ready to go that far"
+ },
+ {
+  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GNcyaSCltezE7ot4WtRdn0jfo0/75d860f8-6dde-45d6-ae81-756ddbfe563e.jpg",
+  "title": "Cully Hill Boys"
+ },
+ {
+  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GNcyaSCltezE7ot4WtRdn0jfo0/f6bf4ce5-2a41-45cb-a099-12bdc1e117c1.jpg",
+  "title": "Red Flag"
+ },
+ {
+  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GNcyaSCltezE7ot4WtRdn0jfo0/f3ca6ccc-a45c-4111-a66e-ecb2e5d38dba.jpg",
+  "title": "Kok Boru"
+ },
+ {
+  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GNcyaSCltezE7ot4WtRdn0jfo0/07c550cd-d621-46a1-8cb1-420986027ac9.jpg",
+  "title": "Adiliada"
+ },
+ {
+  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GNcyaSCltezE7ot4WtRdn0jfo0/6984c17e-8f23-4a86-896c-ff0d3be920ca.jpg",
+  "title": "ONEIRIC"
+ },
+ {
+  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_3GNcyaSCltezE7ot4WtRdn0jfo0/9655238c-398d-4403-bc7d-68e3b43238cf.jpg",
+  "title": "ZEPHYR: Special"
+ },
+ {
+  "image": "https://d2ol7oe51mr4n9.cloudfront.net/user_2v5txepAmNYZwyzml1nIizlWURE/df7107b3-1dd6-438a-a168-ed382e2ad901.png",
+  "title": "HELL GRIND"
+ }
+]
+export const SEEDANCE25 = [["v","https://d8j0ntlcm91z4.cloudfront.net/user_3DgH8zZ7H7xieJnKMyo5N4NA9ge/hf_20260828_133607_f265c973-82fe-4f27-83a9-42d913a2289c.mp4","https://cdn.higgsfield.ai/user_3DgH8zZ7H7xieJnKMyo5N4NA9ge/hf_20260828_133607_f265c973-82fe-4f27-83a9-42d913a2289c_thumbnail.webp",1.779],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3DgH8zZ7H7xieJnKMyo5N4NA9ge/hf_20260828_132351_79618fbd-cc98-4ee0-ae44-cb79da5349f3.mp4","https://cdn.higgsfield.ai/user_3DgH8zZ7H7xieJnKMyo5N4NA9ge/hf_20260828_132351_79618fbd-cc98-4ee0-ae44-cb79da5349f3_thumbnail.webp",0.749],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_041544_b5f84d9d-a9db-472c-9ece-fed23857b096_wm3.mp4","",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_2urRVI1bCfxGUsP28tBUphocCbh/507bc86d-a335-48fb-8732-06695a749350_hs_wm.mp4","https://cdn.higgsfield.ai/user_3H8EAjd4lvlOfCDCxt4J3ZVPr1c/hf_20260807_105454_a60ef591-46a4-49a2-b01a-607dad928ede_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_035550_51b6328c-1648-411a-917a-1d8cecbd166c_wm3.mp4","",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_040632_12ff4cdd-bba8-4a6d-bff5-312d4a2cbb23_wm3.mp4","",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_041459_e02ab22b-6d8e-46bd-874e-8090a8f00799_wm3.mp4","https://cdn.higgsfield.ai/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_041459_e02ab22b-6d8e-46bd-874e-8090a8f00799_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3Btsg1RieQOoYK6o6x65C3UYqNH/hf_20260814_013039_5cf05b01-4cea-4c9e-8af5-1b9122611c9b_wm3.mp4","",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_034505_9389c8eb-ce22-45df-8755-addfb794552f_wm3.mp4","",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3Btsg1RieQOoYK6o6x65C3UYqNH/hf_20260813_235221_7969f2f0-4868-4639-b8f2-85ca915bdd6e_wm3.mp4","https://cdn.higgsfield.ai/user_3Btsg1RieQOoYK6o6x65C3UYqNH/hf_20260813_235221_7969f2f0-4868-4639-b8f2-85ca915bdd6e_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_2urnL94WJ71YKcCUCm8E5tfhGy9/437a80c2-3e11-4650-8777-c06e7ca567c5_hs_wm.mp4","https://cdn.higgsfield.ai/user_3Bu4J9LdRqhDHpwVUmDuiPIuIy0/hf_20260807_101838_4b30080f-2172-46dd-add5-b813276d04f9_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_002238_83054aec-92b9-4efe-b015-6c33e4bd7ba3_wm3.mp4","https://cdn.higgsfield.ai/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_002238_83054aec-92b9-4efe-b015-6c33e4bd7ba3_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_040418_e674bc76-e8c5-4099-bd5c-f871a9345cda_wm3.mp4","https://cdn.higgsfield.ai/user_3HrUZEqvogBOowmw1C0BIb3oNDN/hf_20260814_040418_e674bc76-e8c5-4099-bd5c-f871a9345cda_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3CN3NlActPxxUfaXfH903u7EnPq/468db48f-512d-4ca0-b475-8011acc1e8eb_hs_wm.mp4","https://cdn.higgsfield.ai/user_3Bu4J9LdRqhDHpwVUmDuiPIuIy0/hf_20260807_100920_bc5eed39-89b5-449c-925f-933727ac4c07_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3FRnqOjr7P4vUmrsWyEzZbKAqVU/77406d67-d5db-4b1d-81e2-9e0139b39249_hs_wm.mp4","https://cdn.higgsfield.ai/user_3Bu4J9LdRqhDHpwVUmDuiPIuIy0/hf_20260807_115856_816bc5fd-ea64-42ed-9c0c-d70e666a148f_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3Btsg1RieQOoYK6o6x65C3UYqNH/hf_20260814_024423_23e78b00-c455-420b-b72f-fc8e9b14244c_wm3.mp4","https://cdn.higgsfield.ai/user_3Btsg1RieQOoYK6o6x65C3UYqNH/hf_20260814_024423_23e78b00-c455-420b-b72f-fc8e9b14244c_thumbnail.webp",0.563]]  // [type, src, poster, h/w]
+export const GPTIMAGE2 = [["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_215626_8f188629-c5bb-441a-a0fe-a0be4d976fc6.png","",1.77],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3Bu5JuVtOLeUf9Tqr2GbRxGUfPp/hf_20260422_211323_4cc2cdec-06a1-4d10-93b9-a63a44ae5d93.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_201904_0d9cf28b-bbb3-452f-9ef9-6caf994c02f7.png","",1.34],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_144420_5f74e1a3-ff9e-4f59-b8f8-799982bdd36b.png","",1.77],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_202551_baf580a8-979d-486e-b0a0-b0b09ee83d6d.png","",1.34],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_213610_8f9804a3-5fce-48c0-94e0-5147ab7cf3fd.png","",0.567],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_200634_8bb59f51-35d3-4639-b5a9-673f64940854.png","",0.567],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_215112_09f9313d-4c93-40d5-8d5b-e6a502fa93c1.png","",0.567],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_134519_6fed7b56-35c6-4f75-a58a-7ba86674d801.png","",1.34],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CIjqzTsrKEUr8OzFBaYO4ux3nG/hf_20260421_144013_38e67ed5-cd38-4509-9855-9c4cc9b32fe6.png","",0.663],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_212327_3e910da2-86aa-4fac-adbe-4215fe2110a5.png","",1.34],["i","https://d8j0ntlcm91z4.cloudfront.net/user_3CgVhvaX3mV5mOxcjBTK96F6n03/hf_20260422_212125_23fa9b40-6c58-4bb9-a831-ca4cf02c861c.png","",0.567]]  // [type, src, poster, h/w]
+export const MARKETING = [["v","https://d8j0ntlcm91z4.cloudfront.net/user_3Bu8kApHUBmQcoBNUYoyCcOGJne/hf_20260414_170749_3474b08b-9dc4-49e6-b6e2-4af862eff61d.mp4","https://cdn.higgsfield.ai/user_3Bu8kApHUBmQcoBNUYoyCcOGJne/hf_20260414_170749_3474b08b-9dc4-49e6-b6e2-4af862eff61d_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3CIjqzTsrKEUr8OzFBaYO4ux3nG/hf_20260413_121933_7dfa9582-a536-4a83-9041-ee5aa102ff8c.mp4","https://cdn.higgsfield.ai/user_3CIjqzTsrKEUr8OzFBaYO4ux3nG/hf_20260413_121933_7dfa9582-a536-4a83-9041-ee5aa102ff8c_thumbnail.webp",1.333],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3BuPFKmNsBjkEgZ5LeOvNlL8ShO/hf_20260415_014636_4873f538-b114-48c3-b604-05e32945d184.mp4","https://cdn.higgsfield.ai/user_3BuPFKmNsBjkEgZ5LeOvNlL8ShO/hf_20260415_014636_4873f538-b114-48c3-b604-05e32945d184_thumbnail.webp",1.78],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3CIezRC2bfkh5fn1Cl8MjaHdSlp/hf_20260415_012608_2c21b2ad-368a-4199-bde3-e2c648d78186.mp4","https://cdn.higgsfield.ai/user_3CIezRC2bfkh5fn1Cl8MjaHdSlp/hf_20260415_012608_2c21b2ad-368a-4199-bde3-e2c648d78186_thumbnail.webp",1.78],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3Cfdr00kbZ1hJCLpPQkaicInqxv/hf_20260421_221116_5e4782a0-5148-4832-9362-d17ba238b58b.mp4","https://cdn.higgsfield.ai/user_3Cfdr00kbZ1hJCLpPQkaicInqxv/hf_20260421_221116_5e4782a0-5148-4832-9362-d17ba238b58b_thumbnail.webp",1.78],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3BtuMjeO56IlCCzTiD419c4NiyM/hf_20260415_011357_9dd4f822-d35c-4a43-9102-61ad0bb14331.mp4","",1.333],["v","https://d8j0ntlcm91z4.cloudfront.net/user_34hPp7fXOu4gkTrKKk2ESqFSfG1/hf_20260413_124545_9ae0acdc-4d0e-4c03-a065-b572bf9c66cf.mp4","https://cdn.higgsfield.ai/user_34hPp7fXOu4gkTrKKk2ESqFSfG1/hf_20260413_124545_9ae0acdc-4d0e-4c03-a065-b572bf9c66cf_thumbnail.webp",1.333],["v","https://d8j0ntlcm91z4.cloudfront.net/user_34hPp7fXOu4gkTrKKk2ESqFSfG1/hf_20260410_231619_0c2814a2-9a87-48f8-a18f-811265d90dca.mp4","https://cdn.higgsfield.ai/user_34hPp7fXOu4gkTrKKk2ESqFSfG1/hf_20260410_231619_0c2814a2-9a87-48f8-a18f-811265d90dca_thumbnail.webp",1.333],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3Bu8kApHUBmQcoBNUYoyCcOGJne/hf_20260414_232148_e856f696-c60e-4c40-921e-3fc3ac60224f.mp4","https://cdn.higgsfield.ai/user_3Bu8kApHUBmQcoBNUYoyCcOGJne/hf_20260414_232148_e856f696-c60e-4c40-921e-3fc3ac60224f_thumbnail.webp",0.563],["v","https://d8j0ntlcm91z4.cloudfront.net/user_39acLUpaKDzX3Ox7Ekzzl7vlQ67/hf_20260413_132040_3db6758b-7eef-4046-87e1-ec81097c126e.mp4","https://cdn.higgsfield.ai/user_39acLUpaKDzX3Ox7Ekzzl7vlQ67/hf_20260413_132040_3db6758b-7eef-4046-87e1-ec81097c126e_thumbnail.webp",1.333],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3Cfdr00kbZ1hJCLpPQkaicInqxv/hf_20260422_011129_528f4835-f2b2-4b35-90a0-e4471af95636.mp4","https://cdn.higgsfield.ai/user_3Cfdr00kbZ1hJCLpPQkaicInqxv/hf_20260422_011129_528f4835-f2b2-4b35-90a0-e4471af95636_thumbnail.webp",0.75],["v","https://d8j0ntlcm91z4.cloudfront.net/user_3B9ysSkvPFs8NnELOqJwjcodGpA/hf_20260410_200105_6b9142b4-9ac9-4c42-9206-84b70c939e52.mp4","https://cdn.higgsfield.ai/user_3B9ysSkvPFs8NnELOqJwjcodGpA/hf_20260410_200105_6b9142b4-9ac9-4c42-9206-84b70c939e52_thumbnail.webp",1.333]]  // [type, src, poster, h/w]
+export const SEEDANCE2 = [["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094513_629920b7-4009-46de-b3b6-b80cc2185275_min.mp4","",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094445_b0de712b-ae62-4fb9-9b07-2757b2d0338b_min.mp4","",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094417_ba8bf934-a387-4bf5-8a24-f34be2a65d46_min.mp4","",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094615_1849e0bf-3c53-4790-80d7-d83d03968910_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094615_1849e0bf-3c53-4790-80d7-d83d03968910_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094601_f698d8f7-c96a-42c6-ad0c-8e830417201e_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094601_f698d8f7-c96a-42c6-ad0c-8e830417201e_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094612_2b122af8-b47a-4518-9d91-9675dd8e3f41_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094612_2b122af8-b47a-4518-9d91-9675dd8e3f41_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094557_c0e3952b-1ecf-4621-9b06-eb86a7fe29e8_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094557_c0e3952b-1ecf-4621-9b06-eb86a7fe29e8_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094505_e898193e-ec14-4ecc-92ed-be976174fc88_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094505_e898193e-ec14-4ecc-92ed-be976174fc88_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094412_fbc2c33e-b861-4744-8aa3-13047b3b83c3_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094412_fbc2c33e-b861-4744-8aa3-13047b3b83c3_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094501_61b9fb78-2e54-44d2-bcea-ed0aae4cc707_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094501_61b9fb78-2e54-44d2-bcea-ed0aae4cc707_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094426_5355bac3-67d4-4c59-812c-6ad6b9ce7956_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094426_5355bac3-67d4-4c59-812c-6ad6b9ce7956_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094639_253d329f-1093-4efa-aee2-430c9e66de64_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094639_253d329f-1093-4efa-aee2-430c9e66de64_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094509_a0443ee0-fd26-4f6a-9938-ee153fde5822_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094509_a0443ee0-fd26-4f6a-9938-ee153fde5822_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094654_27691a7e-7a4c-4511-95e2-cd3ae1a11273_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094654_27691a7e-7a4c-4511-95e2-cd3ae1a11273_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094622_41c4ed95-c7c2-49a8-933e-1cec2ea4e6d9_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094622_41c4ed95-c7c2-49a8-933e-1cec2ea4e6d9_thumbnail_min.webp",0.563],["v","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094618_bd067d15-5a16-4ebe-986a-3c1d1a9d919d_min.mp4","https://cdn.higgsfield.ai/user_3AvFCf0aoS6DTSHhwoX3QgsDzIR/hf_20260409_094618_bd067d15-5a16-4ebe-986a-3c1d1a9d919d_thumbnail_min.webp",0.563]]  // [type, src, poster, h/w]
+export const SOULCINEMA = [["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260312_154113_5d74b1d6-5c2d-46b2-873a-d595a0188383.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260313_150735_0b3401a1-0031-45fa-9402-808bc8315fbf.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260314_110254_4adda8fc-103e-4cdc-8e28-4c0dcd9084b6.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260311_130530_2a625748-3ec7-411d-98b8-ee4fc1cf4c8c.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260313_171039_1e41c7ae-2fcf-4051-81b8-e955dd615bd2.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260313_151147_f4dd9d81-fe2d-4a5b-9e12-9ff44c1758fb.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260314_104627_9b8d5df1-45f2-4f8a-9a00-dd69a60c0a17.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260314_194923_c279d800-65c9-4711-bc6a-2715bda503e2.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260314_105240_3310f979-94bc-4f47-8888-8ccf5a1b3731.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260311_132332_4050f80b-d8a7-43ab-87e6-e421ae1cf1fb.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260305_162045_a76abb05-b221-4147-bb8d-2d32ea1da060.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260313_113622_5c4f39d1-9bf9-4e26-b022-29f644c52b18.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260314_185418_423093b6-7eef-4284-af68-e774b4b818f2.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260313_171242_984d7aac-e3da-42de-b8b1-ccd4f0e70979.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260313_113643_2b7c8f81-f4d6-4988-86cf-f33d5dfe8200.png","",0.563],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260312_171646_b4c262b5-9cb1-46bd-a526-307656fa0866.png","",0.563]]  // [type, src, poster, h/w]
+export const SOUL2 = [["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260217_184432_7af6e3df-a5ad-4e8a-a3b4-c6d8637ce85c.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260207_193655_711f3c26-8d2b-4e66-89e4-8357c0100b62.png","",0.75],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260213_201650_322c2e1d-2643-4f06-8c06-dfda0246b527.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_36Hwty94QweUxs82UEGsxmReIrf/hf_20260218_182218_2cfc8314-b866-479e-a70e-b8f27b950e11.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_36Hwty94QweUxs82UEGsxmReIrf/hf_20260217_175012_2482b23d-7762-4366-b718-3fde133ac10e.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_36Hwty94QweUxs82UEGsxmReIrf/hf_20260218_120631_b4bade9f-5e82-4e87-bc66-cea3e15d46de.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_36Hwty94QweUxs82UEGsxmReIrf/hf_20260218_124914_3497c398-0398-44f7-a5b7-395d6c832886.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260218_140621_0659e72b-b64a-44f5-ae26-8cc53ebbdb68.png","",0.75],["i","https://d8j0ntlcm91z4.cloudfront.net/user_36Hwty94QweUxs82UEGsxmReIrf/hf_20260218_190742_2ffd28b9-6a71-4772-8eeb-1a63d989f0d9.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_36Hwty94QweUxs82UEGsxmReIrf/hf_20260218_184556_0e4b2d2d-e4b7-4d49-91e8-a67ed83fb932.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_35h9Zqn0Bk5qurQOPUM7laOSfXO/hf_20260218_141135_4468ae61-47be-4396-834b-8bbc78054909.png","",1.333],["i","https://d8j0ntlcm91z4.cloudfront.net/user_36Hwty94QweUxs82UEGsxmReIrf/hf_20260218_123341_5eeff76b-7e3b-4826-ae1c-ec7ac8b66643.png","",1.333]]  // [type, src, poster, h/w]
+export const GENJUTSU = [["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/54b6f52b-08b2-5acf-9557-2e599560acd8.webp","",0.563],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/c045b52b-ab93-5d96-8e2b-72115697cb50.webp","",0.563],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/9650072f-7ed8-5c91-bc2f-edc3a30ba02e.webp","",1.775],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/e1db4f4b-3101-5151-91bf-a06be7a8a316.webp","",1.775],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/1bc47dfd-2af0-509b-bd76-3896ec07bf3d.webp","",0.563],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/067a9f92-94b2-5e63-accf-2c57fe1a0cdf.webp","",1.775],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/f0ad452c-2254-54cb-932e-d85d0b06dca7.webp","",0.563],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/08edcef0-2205-5490-a4e3-014f32e77587.webp","",0.667],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/f32779dd-b4be-5f1d-ac1f-71f59b92d476.webp","",1.775],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/d34e684b-0ed7-50fa-befb-d550e7a43881.webp","",1.775],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/80918ab3-d0cf-5c86-af99-29d53184edf0.webp","",1.775],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/24daa737-06d4-530d-b2ff-18f0eeb2c289.webp","",0.667],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/a3177c9f-c068-54bb-96b2-abc85054ef9b.webp","",0.667],["i","https://cdn.higgsfield.ai/genjutsu/video-explore/01/edit/c2394654-9775-4512-af95-d60250cfaabf.webp","",0.563],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/33ab59ac-cee3-57eb-95ce-5e754de9f021.webp","",1.775],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/4a716a67-a71a-4496-9df6-d6d337b996d1.webp","",0.563],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/167113f5-32ca-5c5f-ae3f-7f8e7599e964.webp","",0.563],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/03252833-d6bb-5a61-95df-a199d9fe2a5d.webp","",1.775],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/06aaeffd-33c0-5add-a61c-eacf299154fa.webp","",0.563],["i","https://cdn.higgsfield.ai/higgsfield_multiplier_video_explore_variant/56475b81-bfc4-5cf1-ace4-902c5c0797e3.webp","",1.775]]  // [type, src, poster, h/w]
+export const SPC = {
+  bg: 'https://static.higgsfield.ai/spc-banner/bg-spc-banner.png',
+  creative: 'https://static.higgsfield.ai/spc-banner/spc-banner-creative.png',
+  visualizing: 'https://static.higgsfield.ai/spc-banner/spc-banner-visualizing.png',
+  marketing: 'https://static.higgsfield.ai/spc-banner/spc-banner-marketing.png',
+  production: 'https://static.higgsfield.ai/spc-banner/spc-banner-production.png',
+  logo: 'https://static.higgsfield.ai/spc-banner/spc-banner-logo.png',
+}
+export const PROMO = {
+  poster: 'https://static.higgsfield.ai/public/promotions/seedance-2-5-sale-hero-poster.jpg',
+  video: 'https://static.higgsfield.ai/promotions/seedance_2_5_explore_image.mp4',
+  seedanceLogo: 'https://static.higgsfield.ai/explore/image-generate-block/seedance-logo.png',
+  cinemaStudio: 'https://static.higgsfield.ai/explore/image-generate-block/cinema-studio.png',
+  supercomputer: 'https://static.higgsfield.ai/explore/image-generate-block/supercomputer-card-icon.svg',
+}
+export const INFLUENCER = {
+  left: 'https://static.higgsfield.ai/home/ai-influencer-banner/v1/portrait-left-2.webp',
+  right: 'https://static.higgsfield.ai/home/ai-influencer-banner/v1/portrait-right.webp',
+  glows: [2,3,4,5].map((n) => `https://static.higgsfield.ai/home/ai-influencer-banner/v1/glow-${n}.svg`),
+}
+export const CANVAS = 'https://static.higgsfield.ai/canvas-banner-desktop-new.webp'
+export const PHOTODUMP = 'https://static.higgsfield.ai/public/photodump/cta-desktop.png'
