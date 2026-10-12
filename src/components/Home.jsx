@@ -1,3 +1,4 @@
+import Icon, { badgeIcons } from './Icon.jsx';
 import { BADGES, QUESTIONS_PER_DAY, POINTS_PER_CORRECT, PERFECT_BONUS, levelFor, currentStreak, isDoneToday } from '../lib/logic.js';
 import WeekStrip from './WeekStrip.jsx';
 
@@ -33,18 +34,20 @@ export default function Home({ state, today, onStart, onContinue, onReset }) {
     <>
       <section className="hero-band">
         <p className="eyebrow">Daily English practice</p>
-        <h1>Today's challenge</h1>
+        <h1>Little practice.<br /><span>Lasting progress.</span></h1>
         <p className="lede">{QUESTIONS_PER_DAY} short questions. About 2 minutes. Keep your streak and level up.</p>
-        {action}
+        <div className="hero-action">{action}</div>
+        <p className="hero-note">Free to play · No account needed · Progress saved on this device</p>
       </section>
 
-      <h2 className="section-title">How it works</h2>
+      <h2 className="section-title">Small steps. A daily habit.</h2>
       <div className="step-grid">
         <div className="step"><span className="num">01</span><div><h3>Answer 5 questions</h3><p>Everyone gets the same five questions each day.</p></div></div>
         <div className="step"><span className="num">02</span><div><h3>Keep your streak</h3><p>Play every day to build a streak.</p></div></div>
         <div className="step"><span className="num">03</span><div><h3>Earn and level up</h3><p>Collect points, unlock badges and reach new levels.</p></div></div>
       </div>
 
+      <section className="progress-section" id="your-progress">
       <h2 className="section-title">Your progress</h2>
 
       <section className="grid-3" aria-label="Your stats">
@@ -53,6 +56,7 @@ export default function Home({ state, today, onStart, onContinue, onReset }) {
         <div className="stat"><strong>{state.correct}</strong><span>Right answers</span></div>
       </section>
 
+      <div className="progress-grid">
       <section className="card">
         <p className="eyebrow">Level</p>
         <h2>Level {lv.level}: {lv.name}</h2>
@@ -68,14 +72,15 @@ export default function Home({ state, today, onStart, onContinue, onReset }) {
         <WeekStrip history={state.history} today={today} />
       </section>
 
+      </div>
       <section className="card">
         <h2>Badges</h2>
         <div className="badges">
-          {BADGES.map((b) => {
+          {BADGES.map((b, index) => {
             const got = b.earned(state);
             return (
               <div key={b.id} className={`badge ${got ? '' : 'locked'}`}>
-                <div className="ico" aria-hidden="true">{b.icon}</div>
+                <div className="ico" aria-hidden="true"><Icon name={badgeIcons[index]} /></div>
                 <strong>{b.name}</strong>
                 <span>{b.desc}{got ? ' ✓' : ''}</span>
               </div>
@@ -97,6 +102,7 @@ export default function Home({ state, today, onStart, onContinue, onReset }) {
           </ul>
           <p><button className="link danger" onClick={onReset}>Reset my progress on this device</button></p>
         </details>
+      </section>
       </section>
     </>
   );
