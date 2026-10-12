@@ -1,3 +1,5 @@
+import Icon, { badgeIcons } from './Icon.jsx';
+import { BADGES } from '../lib/logic.js';
 import { PERFECT_BONUS, POINTS_PER_CORRECT } from '../lib/logic.js';
 
 export default function Result({ result: r, onHome }) {
@@ -14,8 +16,8 @@ export default function Result({ result: r, onHome }) {
           {r.perfect && <li>Perfect round bonus: +{PERFECT_BONUS}</li>}
         </ul>
         <p><strong>+{r.earned} points today</strong></p>
-        <p>🔥 {r.streak} day{r.streak === 1 ? '' : 's'} in a row</p>
-        {r.levelUp && <p><strong>🎉 Level up! You are now level {r.level}: {r.levelName}.</strong></p>}
+        <p className="streak-line"><Icon name="flame" /> {r.streak} day{r.streak === 1 ? '' : 's'} in a row</p>
+        {r.levelUp && <p><strong>Level up! You are now level {r.level}: {r.levelName}.</strong></p>}
       </section>
 
       {r.newBadges.length > 0 && (
@@ -24,7 +26,7 @@ export default function Result({ result: r, onHome }) {
           <div className="badges stack">
             {r.newBadges.map((b) => (
               <div key={b.id} className="badge new-badge">
-                <div className="ico" aria-hidden="true">{b.icon}</div>
+                <div className="ico" aria-hidden="true"><Icon name={badgeIcons[BADGES.findIndex(badge => badge.id === b.id)]} /></div>
                 <strong>{b.name}</strong>
                 <span>{b.desc}</span>
               </div>
