@@ -22,20 +22,30 @@ export default function Home({ state, today, onStart, onContinue, onReset }) {
     action = (
       <>
         <p>You are on question {openPicks + 1} of {QUESTIONS_PER_DAY}.</p>
-        <button className="btn" onClick={onContinue}>Continue today's challenge</button>
+        <button className="btn light" onClick={onContinue}>Continue today's challenge</button>
       </>
     );
   } else {
-    action = <button className="btn" onClick={onStart}>Start today's {QUESTIONS_PER_DAY} questions</button>;
+    action = <button className="btn light" onClick={onStart}>Start today's {QUESTIONS_PER_DAY} questions</button>;
   }
 
   return (
     <>
-      <section className="card hero">
+      <section className="hero-band">
+        <p className="eyebrow">Daily English practice</p>
         <h1>Today's challenge</h1>
-        <p className="muted">{QUESTIONS_PER_DAY} short questions. About 2 minutes.</p>
+        <p className="lede">{QUESTIONS_PER_DAY} short questions. About 2 minutes. Keep your streak and level up.</p>
         {action}
       </section>
+
+      <h2 className="section-title">How it works</h2>
+      <div className="step-grid">
+        <div className="step"><span className="num">01</span><div><h3>Answer 5 questions</h3><p>Everyone gets the same five questions each day.</p></div></div>
+        <div className="step"><span className="num">02</span><div><h3>Keep your streak</h3><p>Play every day to build a streak.</p></div></div>
+        <div className="step"><span className="num">03</span><div><h3>Earn and level up</h3><p>Collect points, unlock badges and reach new levels.</p></div></div>
+      </div>
+
+      <h2 className="section-title">Your progress</h2>
 
       <section className="grid-3" aria-label="Your stats">
         <div className="stat"><strong>{state.points}</strong><span>Points</span></div>
@@ -44,6 +54,7 @@ export default function Home({ state, today, onStart, onContinue, onReset }) {
       </section>
 
       <section className="card">
+        <p className="eyebrow">Level</p>
         <h2>Level {lv.level}: {lv.name}</h2>
         <div className="progress" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={pct} aria-label="Progress to next level">
           <div style={{ width: `${pct}%` }} />
