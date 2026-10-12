@@ -94,7 +94,7 @@ export default function App() {
 
   return (
     <>
-      <TopBar state={state} />
+      <TopBar state={state} showProgress={!showQuiz && !showResult} />
       <main ref={mainRef} className="wrap" tabIndex={-1}>
         {showQuiz ? (
           <Quiz
@@ -114,4 +114,4 @@ export default function App() {
       <footer className="footer">Practice English a little every day. Works offline after the first visit.</footer>
     </>
   );
-}
+    }
