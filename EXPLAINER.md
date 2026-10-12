@@ -11,7 +11,7 @@ The setup and running instructions are in [README.md](README.md).
 ## Why this idea
 
 - **The audience reads English as a second language.** The app teaches English while it rewards them. Every explanation is short, plain English, and it shows the reason for the answer. Learning counts as part of the reward.
-- **The players are on modest phones and mobile data.** So the app is plain HTML, CSS and JavaScript, with no framework and no build step. It is well under 60 KB, uses no external fonts or images, and works offline after the first visit. Buttons are at least 52 px tall, and the text is 18 px or larger.
+- **The players are on modest phones and mobile data.** The app is built with React 18 and Vite. The production build is about 56 KB gzipped in total, uses no external fonts or images, and works offline after the first visit. Buttons are at least 52 px tall, and the text is 18 px or larger. React is a bigger download than the plain-JavaScript version I started with (about 11 KB gzipped), but it makes the screens and state easier to build, test and extend, which matters for a product that will keep growing.
 - **The rewards are worth real money to them.** That is the main reason I was careful with the reward design (see below).
 
 ## The rewards and why they work this way
@@ -51,12 +51,13 @@ Design choices:
 ## How I tested it
 
 - **Unit tests** (`npm test`, 11 tests) cover question data, the same-day daily picks, scoring, levels, streak logic (including missed days and double-playing), badges and history.
-- **A headless DOM run** (jsdom, outside the repo) went through the full flow: start, answer right and wrong, the feedback, the result screen, the level-up, the badge unlock, and resuming a half-finished round.
+- **A headless DOM run of the React app** (jsdom, outside the repo) went through the full flow: resume a half-finished round, answer, see the locked options and feedback, the result screen, the level-up, the badge unlock, and back to home with the saved progress.
+- **Production build:** `npm run build` succeeds with no errors.
 - **Not tested:** I could not run a real browser or a real Android phone in my environment, so I have not checked the layout visually or measured the speed on a real device. Please open it on a phone first, which is also how the team said they will review it.
 
 ## Where I used AI tools
 
-I used an AI coding assistant (Arena.ai Agent Mode) to help write the code, the question bank and the documentation. I reviewed the design choices, checked the rules against the brief, ran the tests and the headless run, and edited the output. The product decisions (the idea, the reward rules, and what to leave out) are mine.
+I used an AI coding assistant (Arena.ai Agent Mode) to help write the code, first in plain JavaScript and then moved to React, the question bank and the documentation. I reviewed the design choices, checked the rules against the brief, ran the tests and the headless run, and edited the output. The product decisions (the idea, the reward rules, and what to leave out) are mine.
 
 ## Next steps, if this were a product
 

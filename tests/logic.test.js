@@ -1,10 +1,10 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { QUESTIONS } from '../js/questions.js';
+import { QUESTIONS } from '../src/lib/questions.js';
 import {
   dateKey, dayNumber, keyFromDayNumber, pickDailyQuestions, scoreRound, levelFor,
   currentStreak, applyRound, emptyState, earnedBadgeIds, isDoneToday,
-} from '../js/logic.js';
+} from '../src/lib/logic.js';
 
 test('question bank: every answer is one of its options and ids are unique', () => {
   const ids = new Set();

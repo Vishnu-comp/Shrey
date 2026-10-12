@@ -5,11 +5,22 @@
   "description": "Word Streak: a 5-question daily English quiz with streaks, points, levels and badges.",
   "type": "module",
   "scripts": {
-    "start": "node scripts/serve.mjs",
-    "test": "node --test tests/logic.test.js"
+    "start": "npm run build && vite preview --port 8080",
+    "test": "node --test tests/logic.test.js",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "engines": {
     "node": ">=18"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^5.4.21"
+  }
 }

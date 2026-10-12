@@ -4,19 +4,17 @@ Ref: KL-7Q4
 
 A 5-question English quiz you can finish in about 2 minutes. Come back every day to keep your streak, earn points, level up and unlock badges.
 
-- **No build step, no dependencies.** Plain HTML, CSS and JavaScript.
-- **Works on modest Android phones and slow mobile data.** Under 60 KB total, no external fonts or images.
-- **Works offline** after the first visit (service worker).
+- **Built with React 18 and Vite.**
+- **Light for phones:** about 56 KB gzipped in total, no external fonts or images.
+- **Works offline** after the first visit (service worker, production build).
 - **Installable** on the home screen (web app manifest).
 
 See [EXPLAINER.md](EXPLAINER.md) for the product choices, what was left out, and where AI tools were used.
 
 ## Requirements
 
-- **Node.js 18 or newer** (for the local server and tests). Check with `node -v`.
-- A modern browser. Chrome, Edge, Firefox or Safari.
-
-No `npm install` is needed. The project has no runtime packages.
+- **Node.js 18 or newer** (Node 22 is what I tested with). Check with `node -v`.
+- A modern browser: Chrome, Edge, Firefox or Safari.
 
 ## Run it locally
 
@@ -24,51 +22,61 @@ No `npm install` is needed. The project has no runtime packages.
 git clone https://github.com/Vishnu-comp/Shrey.git
 cd Shrey
 git checkout arena/cfb64826-shrey   # the branch with the app
-npm start
+npm install
+npm run dev
 ```
 
-Then open **http://localhost:8080**.
+Then open **http://localhost:5173**. The dev server reloads the page when you save a file.
 
-To test on a phone on the same Wi-Fi, open `http://<your-computer-ip>:8080` on the phone. Find your computer's IP with `ipconfig` (Windows) or `ifconfig` / `ip addr` (macOS and Linux).
+To test on a phone on the same Wi-Fi, open `http://<your-computer-ip>:5173` on the phone. Find your computer's IP with `ipconfig` (Windows) or `ifconfig` / `ip addr` (macOS and Linux).
 
-You can also use any static server, for example `python3 -m http.server 8080` from the project folder.
+## Other commands
 
-## Run the tests
-
-```bash
-npm test
-```
-
-The tests cover the game rules: the daily question picks, scoring, levels, streaks, badges, and the rule that a second round on the same day earns nothing.
+| Command | What it does |
+|---|---|
+| `npm run dev` | Development server with live reload (port 5173). |
+| `npm run build` | Production build into `dist/`. |
+| `npm start` | Builds, then serves the production build on port 8080. Use this to check offline mode. |
+| `npm test` | Runs the unit tests for the game rules. |
 
 ## Project structure
 
 ```
-index.html              App shell and page metadata
-css/style.css           All styles (mobile first)
-js/app.js               UI: screens, buttons, rendering, saving progress
-js/logic.js             Game rules as pure functions (no DOM, easy to test)
-js/questions.js         The question bank (add questions here)
-sw.js                   Service worker for offline use (network first)
-manifest.webmanifest    "Add to home screen" settings
-icons/icon.svg          App icon
-tests/logic.test.js     Unit tests for the game rules
-scripts/serve.mjs       Zero-dependency local server
-EXPLAINER.md            What was built, why, and what was left out
+index.html                  Page shell (loads src/main.jsx)
+vite.config.js              Vite settings (relative base path, dev server on 0.0.0.0)
+public/
+  sw.js                     Service worker for offline use (network first)
+  manifest.webmanifest      "Add to home screen" settings
+  icons/icon.svg            App icon
+src/
+  main.jsx                  React entry point, registers the service worker
+  App.jsx                   Top-level state: screens, answering, finishing a round
+  styles.css                All styles (mobile first)
+  components/
+    TopBar.jsx              Points and streak in the header
+    Home.jsx                Start/continue button, stats, level, badges, rules
+    WeekStrip.jsx           Last 7 days
+    Quiz.jsx                One question at a time, with feedback
+    Result.jsx              Round summary, level-up and new badges
+  hooks/useProgress.js      Loads and saves progress in localStorage
+  lib/
+    logic.js                Game rules as pure functions (no React, easy to test)
+    questions.js            The question bank (add questions here)
+tests/logic.test.js         Unit tests for the game rules
 ```
 
 ## How to change things
 
-- **Add questions:** add an object to `QUESTIONS` in `js/questions.js`. Give it a unique `id`, a `q` (question), `options` (4 choices), `answer` (must match one option exactly) and `why` (a one-line explanation). Keep the English simple.
-- **Change points or levels:** edit the constants at the top of `js/logic.js` (`POINTS_PER_CORRECT`, `PERFECT_BONUS`, `LEVELS`) and `BADGES`.
+- **Add questions:** add an object to `QUESTIONS` in `src/lib/questions.js`. Give it a unique `id`, a `q` (question), `options` (4 choices), `answer` (must match one option exactly) and `why` (a one-line explanation). Keep the English simple.
+- **Change points or levels:** edit the constants at the top of `src/lib/logic.js` (`POINTS_PER_CORRECT`, `PERFECT_BONUS`, `LEVELS`) and `BADGES`.
 - **Storage:** progress is saved in the browser's `localStorage` under the key `word-streak-v1`. The **Reset my progress** button in "How points work" clears it.
 
 ## Deploying
 
-The app is static files, so any free static host works, for example GitHub Pages, Netlify or Cloudflare Pages. Publish the project root with no build command. The service worker and manifest use relative paths, so the app also works from a subfolder URL.
+Run `npm run build` and publish the `dist/` folder to any static host, for example GitHub Pages, Netlify or Cloudflare Pages. The build uses relative paths, so it works from a subfolder URL too.
 
 ## Notes
 
 - Daily questions are the same for everyone on the same calendar day. The day follows the device's local time.
 - Progress lives on the device only. Clearing browser data resets it.
-- When you change files, a normal reload is enough, because the service worker fetches the network first.
+- The service worker uses network first. After you deploy an update, a reload picks it up when online.
