@@ -2,8 +2,9 @@
    System fonts and CSS-only decoration keep this light on mobile data. */
 :root {
   --navy: #1a3a5c;
-  --blue: #2a6cb2;
-  --bg: #f5faff;
+  --blue: #2a6bb5;
+  --bg: #fff;
+  --section-bg: rgba(238, 245, 251, .5);
   --card: #fff;
   --ink: #1a3a5c;
   --muted: #526b82;
@@ -29,13 +30,13 @@ p { margin: 0 0 12px; }
 .muted, .small, .footer { color: var(--muted); }
 .small { font-size: .88rem; }
 .eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: .72rem; font-weight: 600; color: var(--muted); margin-bottom: 20px; }
-.topbar { display: flex; align-items: center; gap: 20px; padding: 20px max(24px, calc((100% - 1072px) / 2)); background: #ffffffed; border-bottom: 1px solid var(--line); }
+.topbar { display: flex; align-items: center; gap: 20px; padding: 20px max(24px, calc((100% - 1072px) / 2)); background: rgba(255, 255, 255, .6); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
 .brand { display: flex; align-items: center; gap: 10px; font-size: 1.3rem; font-weight: 450; letter-spacing: -.04em; white-space: nowrap; }
 .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 8px; background: var(--blue); color: #fff; font-size: 1rem; font-weight: 700; }
 .header-link { margin-left: auto; font-size: .8rem; text-decoration: none; color: var(--muted); min-height: 44px; display: flex; align-items: center; }
 .topbar-stats { display: flex; gap: 8px; margin-left: auto; font-size: .78rem; font-weight: 600; }
 .pill { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; white-space: nowrap; background: #f5faff; }
-.hero-band { text-align: center; padding: 64px 24px 56px; position: relative; background: radial-gradient(ellipse at 50% 100%, #e0edf9, transparent 70%); border-bottom: 1px solid var(--line); margin: 0 -24px; }
+.hero-band { text-align: center; padding: 64px 24px 56px; position: relative; isolation: isolate; overflow: hidden; background-color: #fff; background-image: radial-gradient(80% 35% at 50% 0%, rgba(228, 238, 248, .7) 0%, transparent 100%), radial-gradient(70% 25% at 80% 55%, rgba(237, 244, 251, .5) 0%, transparent 100%), radial-gradient(80% 35% at 50% 100%, rgba(228, 238, 248, .7) 0%, transparent 100%); border-bottom: 1px solid var(--line); margin: 0 -24px; }
 .hero-band h1 span { color: var(--blue); }
 .hero-band .lede { max-width: 530px; margin: 20px auto 28px; color: var(--muted); font-size: 1rem; }
 .hero-action { max-width: 360px; margin: auto; }
@@ -141,3 +142,21 @@ details li { margin-bottom: 10px; font-size: .9rem; }
 .badge .icon { width: 28px; height: 28px; color: var(--blue); }
 .badge.locked .icon { color: var(--muted); }
 .streak-line { display: flex; align-items: center; gap: 6px; }
+
+/* Sampled from kenpath.io/en light theme: white base, page-gradient and hero-radial-glow. */
+.hero-band::before { content: ""; position: absolute; z-index: -1; pointer-events: none; left: 50%; top: 33.333%; width: 900px; height: 900px; transform: translateX(-50%); background: radial-gradient(circle, rgba(180, 210, 240, .25) 0%, transparent 70%); }
+.wrap:has(.hero-band) { width: 100%; max-width: none; padding-bottom: 32px; }
+.wrap:has(.hero-band) > :not(.hero-band) { max-width: 1072px; margin-left: auto; margin-right: auto; }
+.progress-section { max-width: none !important; margin-left: -24px !important; margin-right: -24px !important; padding: 1px max(24px, calc((100vw - 1072px) / 2)) 24px; background: var(--section-bg); }
+.kenpath-logo { display: block; width: 120px; height: auto; flex-shrink: 0; }
+.app-name { border-left: 1px solid var(--line); padding-left: 12px; font-size: 1rem; letter-spacing: -.025em; }
+@media (max-width: 700px) {
+  .hero-band::before { width: 600px; height: 600px; }
+  .brand { gap: 8px; flex-wrap: wrap; }
+  .kenpath-logo { width: 98px; }
+  .app-name { font-size: .75rem; padding-left: 8px; }
+  .progress-section { margin-left: -20px !important; margin-right: -20px !important; padding: 1px 20px 20px; }
+}
+@media (max-width: 360px) {
+  .app-name { flex-basis: 100%; border-left: 0; padding-left: 0; font-size: .7rem; }
+}
