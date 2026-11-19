@@ -1,10 +1,14 @@
 // Job Form Autofill - matching and filling engine.
 // Exposes window.jfaFillAll() inside the extension's isolated world.
-// Safety rules:
+// Works on plain pages, Workday/Greenhouse/Lever/Oracle/Eightfold/Naukri-style
+// forms, LinkedIn Easy Apply, Google Forms, shadow DOM and same-origin iframes.
+//
+// Safety rules (unchanged):
 //   - never fills password, OTP, verification-code, captcha, file or hidden fields
 //   - never ticks checkboxes (consent/declaration boxes stay untouched)
 //   - radios only for a small whitelist (gender, relocation)
 //   - never overwrites a field that already has a value
+//   - never clicks Submit/Send/Apply/Next or any navigation button
 //   - anything it cannot confidently match is left blank
 (function () {
   "use strict";
@@ -19,32 +23,100 @@
     return (s || "").toString().toLowerCase().replace(/[^a-z0-9+]+/g, " ").replace(/\s+/g, " ").trim();
   }
 
+  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+  // ---------- deep DOM traversal (shadow roots + same-origin iframes) ----------
+
+  // All elements matching selector, descending into open shadow roots.
+  function deepQueryAll(root, selector, out) {
+    out = out || [];
+    try {
+      var found = root.querySelectorAll(selector);
+      for (var i = 0; i < found.length; i++) out.push(found[i]);
+      var all = root.querySelectorAll("*");
+      for (var j = 0; j < all.length; j++) {
+        if (all[j].shadowRoot) deepQueryAll(all[j].shadowRoot, selector, out);
+      }
+    } catch (e) {}
+    return out;
+  }
+
+  // Documents to scan: the main document plus same-origin iframe documents.
+  function collectDocuments(doc, out, depth) {
+    out = out || [];
+    depth = depth || 0;
+    if (depth > 3) return out;
+    out.push(doc);
+    var frames = doc.querySelectorAll("iframe, frame");
+    for (var i = 0; i < frames.length; i++) {
+      try {
+        var fd = frames[i].contentDocument;
+        if (fd && fd.body) collectDocuments(fd, out, depth + 1);
+      } catch (e) { /* cross-origin frame - left for the frame's own content script */ }
+    }
+    return out;
+  }
+
+  // ---------- labelling ----------
+
+  function textOf(node) {
+    var t = (node && (node.innerText || node.textContent)) || "";
+    return t.replace(/\s+/g, " ").trim();
+  }
+
   function labelFor(el) {
     var parts = [];
     try {
       if (el.labels && el.labels.length) {
-        for (var i = 0; i < el.labels.length; i++) parts.push(el.labels[i].innerText || "");
+        for (var i = 0; i < el.labels.length; i++) parts.push(textOf(el.labels[i]));
       }
     } catch (e) {}
-    var aria = el.getAttribute("aria-label");
-    if (aria) parts.push(aria);
+    var attrs = ["aria-label", "placeholder", "title", "data-automation-id", "data-testid", "data-test-id"];
+    for (var a = 0; a < attrs.length; a++) {
+      var av = el.getAttribute(attrs[a]);
+      if (av) parts.push(av.replace(/[_\-\[\].]+/g, " "));
+    }
     var by = el.getAttribute("aria-labelledby");
     if (by) {
       by.split(/\s+/).forEach(function (id) {
         var n = el.ownerDocument.getElementById(id);
-        if (n) parts.push(n.innerText || "");
+        if (n) parts.push(textOf(n));
       });
     }
-    if (el.placeholder) parts.push(el.placeholder);
     if (el.name) parts.push(String(el.name).replace(/[_\-\[\].]+/g, " "));
     if (el.id) parts.push(String(el.id).replace(/[_\-\[\].]+/g, " "));
     var ac = el.getAttribute("autocomplete");
     if (ac) parts.push(ac.replace(/-/g, " "));
-    // nearest small container text (first line only)
+    // group/fieldset legend (Workday and Google Forms group questions this way)
+    var grp = el.closest("fieldset, [role=group], [role=radiogroup]");
+    if (grp) {
+      var legend = grp.querySelector("legend, [role=heading]");
+      if (legend) parts.push(textOf(legend));
+    }
+    // a wrapping combobox/listbox often carries the real label
+    var combo = el.closest("[role=combobox]");
+    if (combo && combo !== el) {
+      var cl = combo.getAttribute("aria-label");
+      if (cl) parts.push(cl);
+    }
+    // preceding label/sibling text (common "label then input" markup)
+    var sib = el.previousElementSibling;
+    if (!sib && el.parentElement) sib = el.parentElement.previousElementSibling;
+    if (sib) {
+      var st = textOf(sib);
+      if (st && st.length < 120) parts.push(st);
+    }
+    // nearest small container text (first line only, and only when the box
+    // wraps this one field - a multi-field block's first line belongs to
+    // its first field, not to this one)
     var box = el.closest("div, li, td, fieldset, section");
     if (box) {
-      var t = (box.innerText || "").split("\n").map(function (x) { return x.trim(); }).filter(Boolean)[0];
-      if (t && t.length < 140) parts.push(t);
+      var boxFields = 0;
+      try { boxFields = deepQueryAll(box, "input, select, textarea").length; } catch (e) {}
+      if (boxFields <= 1) {
+        var t = (box.innerText || "").split("\n").map(function (x) { return x.trim(); }).filter(Boolean)[0];
+        if (t && t.length < 140) parts.push(t);
+      }
     }
     return norm(parts.join(" "));
   }
@@ -57,15 +129,21 @@
     return st.visibility !== "hidden" && st.display !== "none";
   }
 
+  // ---------- value setting ----------
+
+  function fireEvents(el, extra) {
+    el.dispatchEvent(new Event("input", { bubbles: true }));
+    el.dispatchEvent(new Event("change", { bubbles: true }));
+    if (extra !== false) el.dispatchEvent(new Event("blur", { bubbles: true }));
+  }
+
   function setNativeValue(el, val) {
     var proto = el instanceof HTMLTextAreaElement ? HTMLTextAreaElement.prototype
       : el instanceof HTMLSelectElement ? HTMLSelectElement.prototype
       : HTMLInputElement.prototype;
     var desc = Object.getOwnPropertyDescriptor(proto, "value");
     if (desc && desc.set) desc.set.call(el, val); else el.value = val;
-    el.dispatchEvent(new Event("input", { bubbles: true }));
-    el.dispatchEvent(new Event("change", { bubbles: true }));
-    el.dispatchEvent(new Event("blur", { bubbles: true }));
+    fireEvents(el);
   }
 
   function highlight(el) {
@@ -78,7 +156,6 @@
 
   function pickOption(select, want) {
     // want: array of regex, first regex that matches an option wins.
-    // Match raw lowercase text (not normalized) so "2-4 years" and "0-2 years" stay distinct.
     var opts = select.options;
     for (var w = 0; w < want.length; w++) {
       for (var i = 0; i < opts.length; i++) {
@@ -122,7 +199,9 @@
     var doc = radio.ownerDocument;
     var group = doc.querySelectorAll('input[type=radio][name="' + CSS.escape(radio.name) + '"]');
     var target = null;
-    if (/gender|sex/.test(label)) target = "male";
+    var groupText = label;
+    for (var g = 0; g < group.length; g++) groupText += " " + labelFor(group[g]) + " " + norm(group[g].value);
+    if (/gender|sex/.test(label) || (/\bmale\b/.test(groupText) && /female/.test(groupText))) target = "male";
     else if (/relocat/.test(label)) target = "yes";
     else return false;
     for (var i = 0; i < group.length; i++) {
@@ -134,7 +213,80 @@
     return false;
   }
 
-  // Ordered rules: first match wins. Each returns a string value, a function(el,label)->value|null, or null.
+  // ---------- custom dropdowns / comboboxes (Workday, Eightfold, select2, react-select) ----------
+  // Strategy: focus, set the typed value, then click the first visible matching
+  // option in the opened listbox. Only options matching our value are clicked.
+
+  function findOpenListOptions(el) {
+    var doc = el.ownerDocument;
+    var listId = el.getAttribute("aria-controls") || el.getAttribute("aria-owns") || el.getAttribute("aria-activedescendant-owner");
+    var roots = [];
+    if (listId) {
+      var l = doc.getElementById(listId);
+      if (l) roots.push(l);
+    }
+    if (!roots.length) {
+      var pops = deepQueryAll(doc, "[role=listbox], [role=menu], .select2-results__options, [class*=dropdown][class*=open], [class*=menu][class*=open]");
+      for (var i = 0; i < pops.length; i++) {
+        if (isVisible(pops[i])) roots.push(pops[i]);
+      }
+    }
+    var opts = [];
+    for (var r = 0; r < roots.length; r++) {
+      var found = roots[r].querySelectorAll("[role=option], [role=menuitem], li, [data-automation-id*=prompt]");
+      for (var k = 0; k < found.length; k++) {
+        if (isVisible(found[k])) opts.push(found[k]);
+      }
+    }
+    return opts;
+  }
+
+  async function fillCombobox(el, value, label) {
+    var v = norm(value);
+    if (!v) return false;
+    try { el.scrollIntoView({ block: "center" }); } catch (e) {}
+    el.focus();
+    el.click();
+    await sleep(150);
+    // type the value so the widget filters (set value + real key events)
+    var proto = HTMLInputElement.prototype;
+    var desc = Object.getOwnPropertyDescriptor(proto, "value");
+    if (desc && desc.set) desc.set.call(el, value); else el.value = value;
+    el.dispatchEvent(new Event("input", { bubbles: true }));
+    el.dispatchEvent(new KeyboardEvent("keydown", { bubbles: true, key: "a" }));
+    el.dispatchEvent(new KeyboardEvent("keyup", { bubbles: true, key: "a" }));
+    await sleep(450);
+    var opts = findOpenListOptions(el);
+    var best = null;
+    for (var i = 0; i < opts.length; i++) {
+      var t = norm(textOf(opts[i]));
+      if (!t) continue;
+      if (t === v) { best = opts[i]; break; }
+      if (!best && (t.indexOf(v) === 0 || v.indexOf(t) === 0)) best = opts[i];
+      else if (!best && t.indexOf(v) !== -1) best = opts[i];
+    }
+    if (best) {
+      best.click();
+      await sleep(120);
+      fireEvents(el, false);
+      return true;
+    }
+    // no matching option: leave the typed value in place (some widgets accept free text)
+    fireEvents(el, false);
+    return el.value && norm(el.value).indexOf(v) !== -1;
+  }
+
+  function isCombobox(el) {
+    if (el.tagName.toLowerCase() !== "input") return false;
+    var role = (el.getAttribute("role") || "").toLowerCase();
+    if (role === "combobox" || role === "searchbox") return true;
+    if (el.getAttribute("aria-haspopup") === "listbox") return true;
+    if (el.getAttribute("aria-expanded") !== null && el.getAttribute("aria-autocomplete")) return true;
+    var cls = (el.className && el.className.baseVal !== undefined ? "" : String(el.className || "")).toLowerCase();
+    return /select2-search|selectized|combobox|typeahead/.test(cls);
+  }
+
+  // ---------- global matching rules: first match wins ----------
   var RULES = [
     { re: /first name|given name|fname/, v: function () { return P.firstName; } },
     { re: /last name|surname|family name|lname/, v: function () { return P.lastName; } },
@@ -169,9 +321,9 @@
         if (/date/.test(label) && el.type === "date") return null; // start dates left to the user
         return P.noticePeriodText;
       } },
-    { re: /total.*experience|years? of experience|experience.*years|work experience|overall experience|relevant experience|\bexperience\b|\byoe\b/, v: function () { return P.totalExperienceYears; } },
-    { re: /current (company|employer|organization|organisation)|present (company|employer)|employer name|company name|current organization/, v: function () { return P.currentCompany; } },
-    { re: /designation|job title|current (role|position|title)|your role|position title/, v: function () { return P.jobTitle; } },
+    { re: /total.*experience|years? of experience|experience.*years|overall experience|relevant experience|\bexperience\b|\byoe\b/, v: function () { return P.totalExperienceYears; } },
+    { re: /current (company|employer|organization|organisation)|present (company|employer)|employer name|current organization/, v: function () { return P.currentCompany; } },
+    { re: /designation|current (role|position|title)|your role/, v: function () { return P.jobTitle; } },
     { re: /street|address/, v: function () { return P.addressLine; } },
     { re: /\bcity\b|current location|present location|\blocation\b|residing/, v: function () { return P.city; } },
     { re: /\bstate\b|province/, v: function () { return P.state; } },
@@ -182,9 +334,8 @@
       } },
     { re: /(master|pg|post ?grad|mca).*(college|university|institute|school)|university.*master/, v: function () { return P.pgCollege; } },
     { re: /(bachelor|ug|under ?grad|bca).*(college|university|institute|school)/, v: function () { return P.ugCollege; } },
-    { re: /college|university|institute/, v: function () { return P.pgCollege; } },
-    { re: /(master|pg|post ?grad).*(degree|qualification)|highest (degree|qualification)|degree/, v: function () { return P.pgDegree; } },
     { re: /skills|tech stack|technologies/, v: function () { return P.skills; } },
+    { re: /primary skill|main skill|core skill|top skill/, v: function () { return P.primarySkill || null; } },
     { re: /summary|about (you|yourself)|\bbio\b|profile (summary|description)|cover letter|introduce yourself|tell us about/, v: function () { return P.bio; } }
   ];
 
@@ -195,55 +346,321 @@
     return null;
   }
 
-  function fillAll() {
-    if (!P) return { error: "profile not loaded", filled: [] };
-    var filled = [];
-    var doneRadioGroups = {};
-    var fields = document.querySelectorAll("input, select, textarea");
+  // ---------- entry-scoped rules (inside a repeating work/education block) ----------
+
+  function entryValue(kind, entry, label, el) {
+    if (kind === "work") {
+      if (/company|employer|organization|organisation/.test(label)) return entry.company;
+      if (/job title|position|\btitle\b|role|designation/.test(label)) return entry.title;
+      if (/currently|present|i (currently )?work/.test(label)) return null; // checkbox - never ticked anyway
+      if (/from|start/.test(label) && !/end|to /.test(label)) {
+        return dateValue(el, entry.startISO, entry.startText, entry.startMonth, entry.startYear);
+      }
+      if (/\bto\b|end/.test(label)) {
+        if (entry.current) return null; // still working here: leave end dates alone
+        return dateValue(el, entry.endISO, entry.endText, entry.endMonth, entry.endYear);
+      }
+      if (/location|city/.test(label)) return entry.location || null;
+      if (/description|responsibilit|duties|summary/.test(label)) return entry.description || null;
+      return null;
+    }
+    // education
+    if (/school|university|college|institute|institution/.test(label)) return entry.school;
+    if (/degree|qualification|diploma/.test(label)) return entry.degree;
+    if (/field of study|major|speciali[sz]ation|course|discipline|area of study/.test(label)) return entry.fieldOfStudy;
+    if (/grade|cgpa|gpa|percentage|score|marks|result/.test(label)) return entry.grade;
+    if (/from|start/.test(label) && !/end|to /.test(label)) {
+      return dateValue(el, entry.startYear ? entry.startYear + "-01-01" : "", entry.startYear, null, entry.startYear);
+    }
+    if (/\bto\b|end|graduat|complet|finish/.test(label)) {
+      return dateValue(el, entry.endYear ? entry.endYear + "-06-01" : "", entry.endYear, null, entry.endYear);
+    }
+    if (/location|city/.test(label)) return null;
+    return null;
+  }
+
+  function dateValue(el, iso, text, month, year) {
+    var type = (el.type || "").toLowerCase();
+    var tag = el.tagName.toLowerCase();
+    if (tag === "select") {
+      var label = labelFor(el);
+      if (/month/.test(label)) return month || "";
+      if (/year/.test(label)) return year || "";
+      return text || "";
+    }
+    if (type === "date") return iso || "";
+    if (type === "month") return iso ? iso.slice(0, 7) : "";
+    if (type === "number") return year || "";
+    return text || iso || "";
+  }
+
+  // ---------- "Add Another" repeating sections (Workday My Experience etc.) ----------
+
+  var ADD_RE = /\badd\b/; // button must at least say "add"
+  var WORK_RE = /experience|employment|\bwork\b|job|position|history/;
+  var EDU_RE = /education|school|academic|qualification|degree|college|university/;
+
+  function buttonText(btn) {
+    return norm((btn.innerText || "") + " " + (btn.value || "") + " " +
+      (btn.getAttribute("aria-label") || "") + " " + (btn.getAttribute("title") || ""));
+  }
+
+  function fillableFields(root) {
+    var all = deepQueryAll(root, "input, select, textarea");
+    var out = [];
+    for (var i = 0; i < all.length; i++) {
+      var t = (all[i].type || "").toLowerCase();
+      if (SKIP_TYPES[t] || t === "checkbox" || t === "radio") continue;
+      out.push(all[i]);
+    }
+    return out;
+  }
+
+  function sectionContainer(btn) {
+    // climb to the smallest ancestor that holds a form field or a matching heading
+    var node = btn.parentElement;
+    var hops = 0;
+    var kindRe = null;
+    var t = buttonText(btn);
+    if (WORK_RE.test(t)) kindRe = WORK_RE;
+    else if (EDU_RE.test(t)) kindRe = EDU_RE;
+    while (node && node !== node.ownerDocument.body && hops < 8) {
+      try {
+        if (fillableFields(node).length >= 1) return node;
+        var heads = node.querySelectorAll("h1, h2, h3, h4, h5, legend, [role=heading], header");
+        for (var h = 0; h < heads.length; h++) {
+          var ht = norm(textOf(heads[h]));
+          if ((kindRe && kindRe.test(ht)) || WORK_RE.test(ht) || EDU_RE.test(ht)) return node;
+        }
+      } catch (e) {}
+      node = node.parentElement;
+      hops++;
+    }
+    return null;
+  }
+
+  function sectionKind(btn, container) {
+    var t = buttonText(btn);
+    if (WORK_RE.test(t)) return "work";
+    if (EDU_RE.test(t)) return "education";
+    if (container) {
+      // heading/legend text of the section
+      var heads = container.querySelectorAll("h1, h2, h3, h4, h5, legend, [role=heading], header");
+      var htext = "";
+      for (var i = 0; i < heads.length; i++) htext += " " + textOf(heads[i]);
+      htext = norm(htext);
+      if (WORK_RE.test(htext)) return "work";
+      if (EDU_RE.test(htext)) return "education";
+    }
+    return null;
+  }
+
+  function findAddButtons(doc) {
+    var cands = deepQueryAll(doc, "button, a, [role=button], input[type=button]");
+    var out = [];
+    for (var i = 0; i < cands.length; i++) {
+      var b = cands[i];
+      if (!isVisible(b) || b.disabled) continue;
+      var t = buttonText(b);
+      if (!ADD_RE.test(t)) continue;
+      if (/delete|remove|address|attachment|resume|photo|skill|language|website|link/.test(t)) continue;
+      var container = sectionContainer(b);
+      var kind = sectionKind(b, container);
+      if (!kind || !container) continue;
+      out.push({ button: b, container: container, kind: kind });
+    }
+    return out;
+  }
+
+  function anchorReFor(kind) {
+    return kind === "work"
+      ? /company|employer|organization|organisation|job title|position title/
+      : /school|university|college|institute|institution|degree/;
+  }
+
+  function entryBlocks(section) {
+    var anchorRe = anchorReFor(section.kind);
+    var fields = fillableFields(section.container);
+    var blocks = [];
+    for (var i = 0; i < fields.length; i++) {
+      var f = fields[i];
+      if (!anchorRe.test(labelFor(f))) continue;
+      // smallest ancestor holding 2+ fields, staying inside the container
+      var node = f.parentElement;
+      var block = null;
+      var hops = 0;
+      while (node && node !== section.container && hops < 8) {
+        if (fillableFields(node).length >= 2) { block = node; break; }
+        node = node.parentElement;
+        hops++;
+      }
+      if (!block) block = f.parentElement || f;
+      if (blocks.indexOf(block) === -1) blocks.push(block);
+    }
+    return blocks;
+  }
+
+  function fieldCount(section) {
+    return fillableFields(section.container).length;
+  }
+
+  async function ensureBlocks(section, desired, log) {
+    var blocks = entryBlocks(section);
+    var clicks = 0;
+    while (blocks.length < desired && clicks < 5) {
+      var before = fieldCount(section);
+      try { section.button.scrollIntoView({ block: "center" }); } catch (e) {}
+      section.button.click();
+      clicks++;
+      log.push("clicked '" + (buttonText(section.button).slice(0, 40) || "Add") + "' (click " + clicks + ")");
+      await sleep(600);
+      var nowBlocks = entryBlocks(section);
+      if (nowBlocks.length > blocks.length) { blocks = nowBlocks; continue; }
+      // some forms append bare fields (no anchor yet) - count growth as progress
+      if (fieldCount(section) > before) { blocks = nowBlocks.length ? nowBlocks : blocks; }
+      else break; // click did nothing - stop hammering
+    }
+    return blocks;
+  }
+
+  async function fillBlock(block, kind, entry, filled) {
+    var fields = fillableFields(block);
     for (var i = 0; i < fields.length; i++) {
       var el = fields[i];
       var tag = el.tagName.toLowerCase();
-      var type = (el.type || "").toLowerCase();
-      if (SKIP_TYPES[type]) continue;
       if (!isVisible(el)) continue;
-
       var label = labelFor(el);
-      if (!label) continue;
-      if (SKIP_LABEL.test(label)) continue;
-
-      if (type === "checkbox") continue; // never tick checkboxes
-      if (type === "radio") {
-        var gname = el.name || label;
-        if (doneRadioGroups[gname]) continue;
-        doneRadioGroups[gname] = true;
-        if (fillRadioGroup(el, label)) {
-          filled.push({ field: label.slice(0, 60), value: "(selected)" });
-        }
-        continue;
-      }
-
-      // never overwrite something already filled
-      if (el.value && String(el.value).trim() !== "") continue;
-
-      var rule = matchRule(label);
-      if (!rule) continue;
-
-      if (tag === "select") {
-        if (fillSelect(el, typeof rule.v === "function" ? rule.v(el, label) : rule.v, label)) {
-          highlight(el);
-          filled.push({ field: label.slice(0, 60), value: el.options[el.selectedIndex] ? el.options[el.selectedIndex].text : "" });
-        }
-        continue;
-      }
-
-      var value = typeof rule.v === "function" ? rule.v(el, label) : rule.v;
+      if (!label || SKIP_LABEL.test(label)) continue;
+      if (el.value && String(el.value).trim() !== "") continue; // never overwrite
+      var value = entryValue(kind, entry, label, el);
       if (value === null || value === undefined || value === "") continue;
-
+      el.__jfaBlock = true;
+      if (tag === "select") {
+        var v = norm(value);
+        var want = [new RegExp("^" + v.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "$"), new RegExp(v.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))];
+        var opt = pickOption(el, want);
+        if (opt) {
+          setNativeValue(el, opt.value);
+          highlight(el);
+          filled.push({ field: label.slice(0, 60), value: el.options[el.selectedIndex] ? el.options[el.selectedIndex].text : value });
+        }
+        continue;
+      }
+      if (isCombobox(el)) {
+        if (await fillCombobox(el, value, label)) {
+          highlight(el);
+          filled.push({ field: label.slice(0, 60), value: value });
+        }
+        continue;
+      }
       setNativeValue(el, value);
       highlight(el);
       filled.push({ field: label.slice(0, 60), value: value });
     }
-    return { filled: filled, url: location.href };
+  }
+
+  // ---------- main pass ----------
+
+  function insideAny(el, blocks) {
+    for (var i = 0; i < blocks.length; i++) {
+      try { if (blocks[i].contains(el)) return true; } catch (e) {}
+    }
+    return false;
+  }
+
+  async function fillOne(el, filled) {
+    var tag = el.tagName.toLowerCase();
+    var type = (el.type || "").toLowerCase();
+    if (SKIP_TYPES[type]) return;
+    if (!isVisible(el)) return;
+
+    var label = labelFor(el);
+    if (!label) return;
+    if (SKIP_LABEL.test(label)) return;
+
+    if (type === "checkbox") return; // never tick checkboxes
+    if (type === "radio") {
+      if (fillRadioGroup(el, label)) {
+        filled.push({ field: label.slice(0, 60), value: "(selected)" });
+      }
+      return;
+    }
+
+    if (el.value && String(el.value).trim() !== "") return; // never overwrite
+
+    var rule = matchRule(label);
+    if (!rule) return;
+    var value = typeof rule.v === "function" ? rule.v(el, label) : rule.v;
+    if (value === null || value === undefined || value === "") return;
+
+    if (tag === "select") {
+      if (fillSelect(el, value, label)) {
+        highlight(el);
+        filled.push({ field: label.slice(0, 60), value: el.options[el.selectedIndex] ? el.options[el.selectedIndex].text : value });
+      }
+      return;
+    }
+    if (isCombobox(el)) {
+      if (await fillCombobox(el, value, label)) {
+        highlight(el);
+        filled.push({ field: label.slice(0, 60), value: value });
+      }
+      return;
+    }
+    setNativeValue(el, value);
+    highlight(el);
+    filled.push({ field: label.slice(0, 60), value: value });
+  }
+
+  async function fillAll() {
+    if (!P) return { error: "profile not loaded", filled: [] };
+    var filled = [];
+    var log = [];
+    var handledBlocks = [];
+    var doneRadioGroups = {};
+
+    var docs = collectDocuments(document);
+
+    // Pass 1: repeating sections with "Add"/"Add Another" buttons.
+    var seenContainers = [];
+    for (var d = 0; d < docs.length; d++) {
+      var sections = findAddButtons(docs[d]);
+      for (var s = 0; s < sections.length; s++) {
+        var section = sections[s];
+        if (seenContainers.indexOf(section.container) !== -1) continue;
+        seenContainers.push(section.container);
+        var entries = section.kind === "work" ? (P.workExperience || []) : (P.education || []);
+        if (!entries.length) continue;
+        var blocks = await ensureBlocks(section, entries.length, log);
+        var n = Math.min(blocks.length, entries.length);
+        for (var b = 0; b < n; b++) {
+          handledBlocks.push(blocks[b]);
+          var bfields = deepQueryAll(blocks[b], "input, select, textarea");
+          for (var m = 0; m < bfields.length; m++) bfields[m].__jfaBlock = true;
+          await fillBlock(blocks[b], section.kind, entries[b], filled);
+        }
+        if (blocks.length < entries.length) {
+          log.push("section only gave " + blocks.length + " of " + entries.length + " " + section.kind + " blocks - remaining entries left for manual add");
+        }
+      }
+    }
+
+    // Pass 2: ordinary fields everywhere (shadow DOM + same-origin iframes included).
+    for (var dd = 0; dd < docs.length; dd++) {
+      var fields = deepQueryAll(docs[dd], "input, select, textarea");
+      for (var i = 0; i < fields.length; i++) {
+        var el = fields[i];
+        if (el.__jfaBlock || insideAny(el, handledBlocks)) continue;
+        var type = (el.type || "").toLowerCase();
+        if (type === "radio") {
+          var gname = (el.name || labelFor(el)) + "@" + dd;
+          if (doneRadioGroups[gname]) continue;
+          doneRadioGroups[gname] = true;
+        }
+        await fillOne(el, filled);
+      }
+    }
+    return { filled: filled, log: log, url: location.href };
   }
 
   window.jfaFillAll = fillAll;
@@ -252,9 +669,9 @@
   if (typeof chrome !== "undefined" && chrome.runtime && chrome.runtime.onMessage) {
     chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
       if (msg && msg.type === "JFA_FILL") {
-        sendResponse(fillAll());
+        fillAll().then(sendResponse);
+        return true; // async response
       }
-      return true;
     });
   }
 })();
