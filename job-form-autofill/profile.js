@@ -47,6 +47,54 @@ const JFA_PROFILE = {
   pgCollege: "Christ University",
 
   skills: "Java, Spring Boot, MySQL, React, Redux, TypeScript, Next.js, JavaScript",
+  primarySkill: "Java",
 
-  bio: "Software Development Engineer with about 2 years of experience building full-stack applications with Java, Spring Boot, React and Next.js. MCA from Christ University. Based in Bengaluru and open to relocating within India."
+  bio: "Software Development Engineer with about 2 years of experience building full-stack applications with Java, Spring Boot, React and Next.js. MCA from Christ University. Based in Bengaluru and open to relocating within India.",
+
+  // ---------------------------------------------------------------
+  // REPEATING SECTIONS ("Add Another" / "Add" buttons).
+  // The filler clicks the section's Add button until there is one
+  // block per entry below, then fills each block with its own entry.
+  // First entry = most recent. Nothing here is ever submitted.
+  // ---------------------------------------------------------------
+  workExperience: [
+    {
+      company: "Shoffr",
+      title: "Full Stack Developer",
+      location: "Bengaluru",
+      current: true,            // still working here: end-date fields are left alone
+      startMonth: "02", startYear: "2025",
+      startText: "02/2025", startISO: "2025-02-03",
+      endMonth: "", endYear: "", endText: "", endISO: "",
+      description: ""
+    },
+    {
+      company: "ICIER",
+      title: "Intern",
+      location: "Remote",
+      current: false,
+      startMonth: "05", startYear: "2024",
+      startText: "05/2024", startISO: "2024-05-01",
+      endMonth: "07", endYear: "2024",
+      endText: "07/2024", endISO: "2024-07-31",
+      description: ""
+    }
+  ],
+
+  education: [
+    {
+      school: "Christ University",
+      degree: "MCA",
+      fieldOfStudy: "Computer Applications",
+      grade: "7.3 CGPA",
+      startYear: "2023", endYear: "2025"
+    },
+    {
+      school: "Kristu Jayanti Autonomous College",
+      degree: "BCA",
+      fieldOfStudy: "Computer Applications",
+      grade: "8.3 CGPA",
+      startYear: "2020", endYear: "2023"
+    }
+  ]
 };
