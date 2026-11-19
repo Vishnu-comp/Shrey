@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif; width: 340px; margin: 0; padding: 14px; }
+  h1 { font-size: 15px; margin: 0 0 4px; }
+  p.sub { font-size: 12px; color: #555; margin: 0 0 12px; }
+  button { width: 100%; padding: 10px; font-size: 14px; font-weight: 600; border: 0; border-radius: 8px;
+           background: #2563eb; color: #fff; cursor: pointer; }
+  button:hover { background: #1d4ed8; }
+  #status { margin-top: 10px; font-size: 12.5px; white-space: pre-wrap; max-height: 300px; overflow-y: auto; }
+  .note { margin-top: 10px; font-size: 11.5px; color: #666; line-height: 1.45; }
+</style>
+</head>
+<body>
+  <h1>Job Form Autofill</h1>
+  <p class="sub">Fills the form on this page from your saved details, including "Add Another" work/education sections and custom dropdowns. Already-filled fields are not touched. Passwords, OTPs and checkboxes are always skipped.</p>
+  <button id="fill">Fill this form</button>
+  <div id="status"></div>
+  <p class="note">Multi-step form (Workday, LinkedIn Easy Apply)? Click the button again on each step. It never clicks Submit, Send or Next. Check every field before you submit.</p>
+  <script src="popup.js"></script>
+</body>
+</html>

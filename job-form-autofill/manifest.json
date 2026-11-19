@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Job Form Autofill - Vishnu",
+  "version": "1.1.0",
+  "description": "Fills job application forms from your saved profile, including Add Another work/education sections and custom dropdowns. Never fills passwords, OTPs, or consent checkboxes, and never submits.",
+  "permissions": ["activeTab", "scripting"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Job Form Autofill"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["profile.js", "fill.js"],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ]
+}
